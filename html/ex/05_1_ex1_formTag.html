@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form 태그 : 정보를 제출하기 위한 태그 -->
+    <br>
+    <form action="">
+        <!-- input 태그 : 다양한 방법으로 데이터를 받기 위한 태그 -->
+        <!-- 속성 -->
+        <!-- text : 일반적인 텍스트를 입력할 수 있는 값 -->
+        <!-- 아이디 -->
+        <fieldset>
+            <legend>정보입력</legend>
+        <label for="input-id">ID</label>
+        <input type="text" id="input-id" required placeholder="ID를 입력하세요">
+        <br>
+        <!-- 비밀번호> -->
+        <label for="input-password">PW</label>
+        <input type="password" name="" id="input-password" required placeholder="비밀번호를 입력하세요">
+        <br>
+        <!-- 이메일, 이메일 형식이 아니면 오류 -->
+        <label for="input-email">@</label>
+        <input type="email" name="" id="input-email" placeholder="이메일을 입력하세요">
+        <button type="submit">tt</button>
+        <br>
+        <!-- 읽기 전용 -->
+        <input type="email" readonly value="읽기 전용">
+        <input type="text">
+    </fieldset>
+
+        <br><br>
+        <!-- 선택 체크박스 -->
+        <input type="checkbox" name="food" id="chk-1">
+        <label for="chk-1>">돈가스</label><br>
+        <input type="checkbox" name="food" id="chk-2">
+        <label for="chk-2>">짜장면</label><br>
+        <input type="checkbox" name="food" id="chk-3">
+        <label for="chk-3>">샌드위치</label>
+        <br><br>
+        <!-- 하나만 선택되는 -->
+        <input type="radio" name="fruit" id="radio-1">
+        <label for="radio-1">사과</label><br>
+        <input type="radio" name="fruit" id="radio-2">
+        <label for="radio-2">바나나</label>
+        <br><br>
+        <input type="date"><br><br>
+        <input type="range" min="0" max="10"><br><br>
+        <input type="number" min="0" max="10" placeholder="숫자">
+        <br>
+        <!-- input 버튼은 요즘은 잘 안쓴다
+        <input type="button" value="인풋 버튼">
+        <input type="button" value="인풋 서브밋">
+        <input type="button" value="인풋 reset">
+         -->
+        
+        <br>
+        <textarea cols="30" rows="20"></textarea>
+        <br><br>
+        <select name="poketmon" id="pokermon">
+            <option value="0">피카츄</option>
+            <option value="1">라이츄</option>
+            <option value="2">파이리</option></select>
+        <br><br>
+        <button type="button">button</button> 
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+        <br>
+
+        
+        
+    
+    </form>
+</body>
+</html>
