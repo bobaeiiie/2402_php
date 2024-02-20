@@ -1,0 +1,35 @@
+/* 기본 선택자 
+
+1. 전체 선택자 */
+* { 
+    color: aqua;
+}
+
+/* 2. 타입 선택자 */
+h1 {
+    color: red;
+}
+P {
+    color: green;
+}
+
+/* 3. 클래스 선택자 */
+.color-orange {
+    color:orange;
+}
+.font-size-3rem {
+    font-size: 3rem;
+}
+.color-black {
+    color: black;
+}
+/* 4. id 선택자 */
+#p-2 {
+    color: blueviolet;
+}
+
+/* 5. 그룹 선택자 */
+h1, #p-2 {
+    color: brown;
+}
+

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR&family=Nanum+Pen+Script&display=swap');
+
+* {
+    /* 글꼴 지정 */
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1 {
+    /* 글자 크기 변경
+    font-size: medium; 키워드로 조절 */
+    
+    /* px로 조절
+    font-size: 100px */
+    
+    /* em으로 조절
+    font size:2em; */
+
+    /* rem 최상위 요소 body 기준 배율 */
+    font-size: 2rem;
+}
+div {
+    font-size: 40px;
+}
+p {
+    /* 폰트 굵기
+    font-weight: lighter; */
+
+    /* 숫자를 통해 조절 (100~900, 백단위) */
+    font-weight: 400;
+
+
+}

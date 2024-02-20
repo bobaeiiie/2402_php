@@ -1,0 +1,58 @@
+.color-name {
+    color: red;
+}
+.color-hex {
+    color: #22ae97;
+}
+.color-rgb {
+    color: rgb(255,0,255);
+}
+.color-rgba {
+    color: rgba(255, 0, 255, 0.5);
+
+}
+.color-hsla {
+    color: hsl(204, 100%, 50%);
+}
+#p-center {
+    text-align: center;
+}
+#p-right {
+    text-align: right;
+}
+#p-left { 
+    text-align: left; /* 디폴트 */
+}
+.div-center {
+    width: 200px;
+    height: 200px;
+    background-color: burlywood;
+}
+.div-center p {
+    text-align: center;
+    line-height: 200px;  /* 줄간격 조절을 통해 중앙으로 정렬 */
+}
+/* 영어 첫번 째 글자를 대문자로 변환 */
+.capitalize {
+    text-transform: capitalize;
+}
+/* 텍스트를 영어 대문자로 변환 */
+.uppercase {
+    text-transform: uppercase;
+}
+/* 텍스트를 영어 소문자로 변환 */
+.lowercase {
+    text-transform: lowercase;
+}
+/* 자간 설정 */
+.letter-spacing {
+    letter-spacing: 7rem;
+}
+/* 단어 간격 설정 */
+.word-spacing {
+    word-spacing: 2rem;
+}
+/* 그림자 설정 - 가로위치 세로위치 그림자 크기 색상 */
+.shadow {
+    text-shadow: 5px 5px 10px #15ff00;
+}
