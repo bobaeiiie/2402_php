@@ -1,0 +1,15 @@
+ul {
+    text-indent: 1rem;
+}
+span {
+    font-size: 25px;
+    font-weight: 600;
+    color: #ad3000
+}
+.ul-none {
+    list-style-type: none;
+}
+.line-height {
+    line-height: 3rem;
+}
+

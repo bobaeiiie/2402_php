@@ -1,6 +1,6 @@
 * {
     font-family: "Orbit", sans-serif;
-    font-weight: 400;
+    font-weight: 900;
     font-style: normal;
 }
 .shadow {
@@ -14,3 +14,24 @@ h1 {
     font-weight: 900;
     font-style: normal;
 }
+.div-center {
+    width: 200px;
+    height: 200px;
+    background-color: burlywood;
+}
+.div-center {
+    text-align: center;
+    line-height: 200px;
+}
+
+.div-center-2 {
+    width: 500px;
+    height: 500px;
+    background-color: #15ff00;
+}
+
+.div-center-2 {
+    text-align: center;
+    line-height: 500px;
+}
+

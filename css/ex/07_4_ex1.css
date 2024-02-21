@@ -1,0 +1,15 @@
+.ul-none {
+    list-style-type: none;
+}
+.ul-decimal {
+    list-style-type: decimal;
+}
+.ul-img {
+    list-style-image: url('../img/docker.png');
+}
+.ul-lower-alpha {
+    list-style-type: lower-alpha;
+}
+.ul-inside {
+    list-style-position: inside;
+}
