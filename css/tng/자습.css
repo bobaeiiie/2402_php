@@ -1,37 +1,19 @@
-* {
-    font-family: "Orbit", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-}
-.shadow {
-    text-shadow: 5px 5px 10px #15ff00;
-}
-.weight900 {
-    font-weight: 900;
-}
-h1 {
-    font-family: "Bagel Fat One", system-ui;
-    font-weight: 900;
-    font-style: normal;
-}
-.div-center {
-    width: 200px;
-    height: 200px;
-    background-color: burlywood;
-}
-.div-center {
-    text-align: center;
-    line-height: 200px;
-}
 
-.div-center-2 {
-    width: 500px;
-    height: 500px;
-    background-color: #15ff00;
+div {
+    width: 150px;
+    height: 50px;
+    margin: 5px;
 }
-
-.div-center-2 {
-    text-align: center;
-    line-height: 500px;
+.div-1 {
+    background: radial-gradient(white, blue);
 }
-
+.div-2 {
+    background: radial-gradient(circle, white, blue);
+}
+.div-3 {
+    background: radial-gradient(circle closest-corner, white, blue 50%);
+}
+.div-4 {
+    background: radial-gradient(circle at 50% 50%, white, blue 25%, white);
+    %);
+}
