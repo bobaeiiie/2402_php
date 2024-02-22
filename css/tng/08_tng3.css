@@ -1,0 +1,58 @@
+/* main > div {
+    float: left;
+    width: 400px;
+    height: 200px;
+    border: 1px dotted grey;
+    margin: 10px;
+    padding-left: 12px;    
+}
+.box3 {
+    clear: left;
+} 
+footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+    line-height: 40px;
+    margin-top: -12px;
+    clear: left;
+} */
+
+.header, .container, .footer {
+    width: 700px;
+}
+
+.container {
+    position: relative;
+    height: 570px;
+}
+.section1 {
+    top: 2%;
+    left: 2%
+}
+.section2 {
+    top: 2%;
+    right: 2%
+}
+.section3 {
+    bottom: 2%;
+    left: 2%
+}
+.section4 {
+    bottom: 2%;
+    right: 2%
+}
+
+.container > div {
+    border: 1px dashed rgb(178, 178, 178);
+    padding: 1rem;
+    width: 300px;
+    position: absolute;
+}
+.footer {
+    background-color: #000;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+}

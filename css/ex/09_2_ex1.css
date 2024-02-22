@@ -1,0 +1,41 @@
+/* body {
+    background-image: url('./img/docker.png'), url('../img/dog.jpg');
+    background-attachment: fixed;
+    background-size: contain;
+}
+div {
+    height: 300vh;
+} */
+
+div {
+    margin: 5px;
+    border: 3px solid #000;
+    width: 200px;
+    height: 100px;
+    background-image: url(../img/docker.png);
+}
+.auto {
+    background-size: auto;
+}
+.contain {
+    background-size: contain;
+}
+.cover {
+    background-size: cover;
+}
+.px {
+    background-size: 10px;
+}
+.vw {
+    background-size: 50%;
+}
+.position-center {
+    background-position: center;
+}
+.position-top-right {
+    background-position: top 10px right 10px;
+}
+
+.no-repeat {
+    background-repeat: no-repeat;
+}

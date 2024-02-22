@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    width: 100vw;
+    height: 20vh;
+    background-color: blueviolet;
+}
+main {
+    width: 100w;
+    height: 60vh;
+    background-color: beige;
+}
+aside {
+    width: 30%;
+    height: 100%;
+    background-color: black;
+    float: left;
+}
+section {
+    width: 70%;
+    height: 100%;
+    background-color: chocolate;
+    float: right;
+}
+footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: cadetblue;
+    clear: both; /* 영상보고 복습해야함 */
+}

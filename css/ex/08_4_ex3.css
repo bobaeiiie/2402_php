@@ -1,0 +1,10 @@
+.img-1 {
+    float: right;
+}
+img {
+    display: block;
+    float: left;
+}
+.clear-float {
+    clear: left;
+}
