@@ -1,0 +1,22 @@
+/* 연결 선택자(Combination Selector 
+공백, >, +, ~ 등 결합자(combinator)를 이용해 특정 요소를 선택 */
+
+/* 후손 결합자 , 공백 */
+header div span {
+}
+
+/* 자식 결합자 , > 기호 */
+header > span {
+    color: rgb(255, 110, 297);
+    font-weight: 900;
+}
+
+/* 인접형제 결합자 , + 기호 */
+header + span {
+
+}
+
+/* 일반 형제 결합자 , ~ 기호 */
+header span {
+
+}

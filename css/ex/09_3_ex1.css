@@ -1,0 +1,13 @@
+div {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+
+.line-1 {
+    background: linear-gradient(60deg, white,blue, white);
+}
+.circle-1 {
+    height: 50px;
+    background: radial-gradient(circle at 0% 25%, white, blue, white);
+}
