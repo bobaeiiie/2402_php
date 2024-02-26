@@ -1,19 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding: 20px;
+}
+.container ul {
+    list-style: none;
+    display: inline-block;
+    box-shadow: 0px 5px 5px 5px rgb(70, 70, 70);
+}
+.container li {
+    background-color: rgb(189, 189, 189);
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    color: black;
+}
+/* .container > ul > li:not(:last-child) {
+    border-right: 2px solid rgb(65, 255, 65);
+} */
 
-div {
-    width: 150px;
-    height: 50px;
-    margin: 5px;
+.container > ul > li:not(:last-child):hover {
+    background-color: #4d4d4d;
 }
-.div-1 {
-    background: radial-gradient(white, blue);
+.container > ul > li:last-child:hover {
+    background-color: red;
+    color: white;
 }
-.div-2 {
-    background: radial-gradient(circle, white, blue);
+.container > ul > li:not(:last-child) {
+border-right: 2px solid greenyellow;
 }
-.div-3 {
-    background: radial-gradient(circle closest-corner, white, blue 50%);
+li:hover {
+    animation: test 1s forwards;
 }
-.div-4 {
-    background: radial-gradient(circle at 50% 50%, white, blue 25%, white);
-    %);
+@keyframes test {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+    }
 }

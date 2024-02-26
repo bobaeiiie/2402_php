@@ -1,0 +1,13 @@
+/* 선택자::before 
+특정요소의 컨텐츠 앞에 새로운 요소 삽입 */
+
+.required::before {
+    content: '*';
+    color: red;
+}
+/* 선택자::after
+특정요소의 컨텐츠 뒤에 새로운 요소 삽입 */
+
+.required::after {
+    content: '중요';
+}

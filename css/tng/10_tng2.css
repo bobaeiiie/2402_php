@@ -1,0 +1,89 @@
+/* body {
+    box-sizing: border-box;
+}
+fieldset {
+    width: 500px;
+    height: 400px;
+    background-image: url(../img/docker.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+legend {
+    color: magenta;
+}
+.required::before {
+    content: '*';
+    color: red;
+}
+label {
+    font-weight: 900;
+}
+textarea {
+    background-color: transparent;
+    height: 140px;
+    vertical-align: top;
+}
+input:focus, textarea:focus {
+    border: 5px solid red;
+    outline: none;
+}
+input:checked + label {
+    color: red;
+}
+.hover-text {
+    display: none;
+    background-color: black;
+    color: white;
+}
+.hover-button:hover +.hover-text {
+    display: inline-block;
+}
+.transparent {
+    background-color: transparent;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 1rem;
+    width: 500px;
+    height: 400px;
+}
+fieldset {
+    padding: 1rem;
+    background-image: url(../img/uncel.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+legend {
+    font-size: 2rem;
+    font-weight: 900;
+    color: magenta;
+}
+.require::before {
+    content: '*';
+    color: red;
+}
+input:focus, textarea:focus {
+    border: 3px solid red;
+    outline: none;
+}
+input[name="radio-gender"]:checked + label {
+    color: red;
+}
+input, textarea {
+    background-color: transparent;
+}
+label[for=req] {
+    vertical-align: top;
+}
+.check-content {
+    background-color: black;
+    color: white;
+    display: none;
+}
+button:hover + .check-content {
+    display: inline;
+}
