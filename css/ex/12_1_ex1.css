@@ -1,0 +1,26 @@
+/* 미디어 쿼리
+브레이크 포인트(종단점)을 이용해 어떤 css를 적용할지 지정
+- screen : 주로 화면이 대상 (def)
+- all : 모든 장치에 적합
+- print : 인쇄 결과물 및 출력 미리보기 화면에 표시 중인 문서
+*/
+.bk_div {
+    width: 200px;
+    height: 200px;
+}
+@media (max-width: 500px) {
+    .bk_div {
+        background-color: red;
+    }
+}
+@media (min-width: 501px) and (max-width: 1000px) {
+    .bk_div {
+        background-color: yellow;
+    }
+}
+@media (min-width: 1001px) {
+    .bk_div {
+        background-color: pink;
+        width: 1000px;
+    }
+}

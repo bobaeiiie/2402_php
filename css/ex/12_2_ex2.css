@@ -1,0 +1,31 @@
+.container {
+    padding: 5px;
+    width: 500px;
+    height: 500px;
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-content: space-between;
+}
+.row-1 {
+    width: 100%;
+}
+.row-2 {
+    width: 49%;
+}
+.column-2 {
+    height: 47%;
+}
+.column-3 {
+    height: 32%;
+}
+.item {
+    background-color: cadetblue;
+    border: 1px solid black;
+}
+.item_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
