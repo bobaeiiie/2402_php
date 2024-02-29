@@ -1,0 +1,14 @@
+.container {
+    background-color: grey;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    gap: 10px;
+}
+.item {
+    background-color: cadetblue;
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+}
+

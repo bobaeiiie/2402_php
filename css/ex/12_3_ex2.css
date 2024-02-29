@@ -1,0 +1,23 @@
+* {
+
+}
+.container {
+    background-color: grey;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
+    gap: 10px;
+    padding: 10px;
+}
+.item {
+    background-color: cadetblue;
+    border: 1px solid black;
+}
+.row-1 {
+    grid-column: 1 / 3;
+}
+.col-2 {
+    grid-row: 3 / 5;
+}

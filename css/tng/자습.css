@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,10 +20,6 @@
     float: left;
     color: black;
 }
-/* .container > ul > li:not(:last-child) {
-    border-right: 2px solid rgb(65, 255, 65);
-} */
-
 .container > ul > li:not(:last-child):hover {
     background-color: #4d4d4d;
 }
@@ -44,4 +40,148 @@ li:hover {
     to {
         transform: scale(2);
     }
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+}
+.header {
+    background-color: #FF3d49;
+    color: white;
+}
+.logo {
+    margin: 3rem 1rem;
+    text-align: center;
+}
+.nav_title {
+    background-color: #ff5662;
+    padding: 0.5rem 1rem;
+    font-weight: 900;
+}
+.nav_list {
+    margin-bottom: 3rem;
+}
+.nav_item {
+    padding: 0.2rem;
+    font-weight: 900;
+}
+a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+.nav_item:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 2s;
+}
+.nav_item:hover a {
+    color: #ff5662;
+    transition: all 1s; 
+}
+.main {
+    background-color:#f5f5f5;
+    padding-top: 10px;
+}
+.main_search {
+    height: 60px;
+}
+form {
+    display: flex;
+    justify-content:flex-start;
+    padding: 5px 1rem;
+    gap: 10px;
+}
+input[type="search"] {
+    width: 30%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: transparent;
+    border-radius: 25px;
+}
+input[type="search"]:hover {
+    width: 60%;
+    transition: all 1s;
+    background-color: #cdcdcd;
+}
+input[type="search"]:focus {
+    outline: none;
+}
+.btn_search {
+    width: 40px;
+    height: 40px;
+    background-color: #ff5662;
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50%;
+    box-shadow: -3px -2px 3px 2px rgb(190, 55, 55) inset;
+}
+.main_title {
+    height: 300px;
+    background-image: url(../img/main_title.jpg);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+.main_card_list {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.card {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 1px 1px 3px 1px rgb(193, 193, 193);
+}
+.card_img {
+    padding-top: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+.card_info p {
+    font-size: 1.2rem;
+    margin: 0.2rem 0rem;
+}
+.move_top {
+    width: 50px;
+    height: 50px;
+    background-color: #ff5662;
+    color: white;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    display: flex;
+    justify-content: center;
+    line-height: 40px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    border-radius: 50%;
+    box-shadow: -3px -2px 3px 2px rgb(190, 55, 55) inset;
+}
+
+
+/* 호버 시 로고 글자 사라지고 다른 로고 뜨는 것 
+transition 1s 사용해서 투명넣어서 해보기
+플레이스홀더 가능한지? 
+
+보더 래디언스 왼쪽만 주고 오른쪽은 각지게
+
+
+*/

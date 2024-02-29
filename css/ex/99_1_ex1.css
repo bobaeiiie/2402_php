@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+}
+.header {
+    background-color: #ff3d49;
+    color: white;
+}
+.nav {
+    position: sticky;
+    top:3rem;
+}
+.logo {
+    margin: 3rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+.nav_title {
+    background-color: #ff5662;
+    font-weight: 900;
+    padding: 0.5rem 1rem;
+}
+.nav_item {
+    padding: 0.2rem 1rem;
+}
+.nav_list {
+    margin-bottom: 3rem;
+}
+.nav_item:hover {
+    background-color: black;
+    transition: all 1s; 
+    /* 점진적으로 변화 */
+}
+.nav_item:hover a {
+    color: #6e5af0;
+    transition: all 2s; 
+}
+.main_search {
+    height: 50px;
+}
+form {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 1rem;
+}
+.main_title {
+    height: 300px;
+    background-image: url(../img/main_title.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex로 중앙정렬하는 방법 */
+}
+h2 {
+    color: white;
+    font-size: 3rem;
+}
+.main {
+    background-color:#f5f5f5;
+}
+input[type="search"] {
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.btn_search {
+    width: 40px;
+    height: 40px;
+    background-color: #6e5af0;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    line-height: 40px;
+}
+.main_card_list {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.card {
+    background-color: #fff;
+    padding: 1rem;
+}
+.card_img {
+    padding-top: 70%;
+    /* 이미지 고정.. 그냥 외워라 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+.card_info > p {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+.move_top {
+    width: 50px;
+    height: 50px;
+    background-color: #ff5662;
+    position: fixed;
+    bottom: 5rem; 
+    right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: -3px -2px 3px 2px rgb(137, 24, 24) inset;
+}
+.move_top > a {
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    font-weight:900;
+
+}
