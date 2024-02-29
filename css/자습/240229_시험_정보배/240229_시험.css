@@ -17,6 +17,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
+    background-position: center;
     background-size: cover;
 }
 .header_title {
@@ -85,6 +86,12 @@ a {
     justify-content: center;
     line-height: 40px;
 }
+[class$=_btn]:hover {
+    background-color: rgba(218,165,32,30%);
+    color: #000000;
+    transition: all 3s;
+}
+
 .header_btn {
     width: 200px;
     height: 60px;
