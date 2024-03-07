@@ -57,25 +57,6 @@ WHERE emp.emp_no IN (
 			HAVING AVG(sal.salary) >= 70000
 	);
 
-SELECT
-	emp.emp_no
-	,emp.first_name
-	,emp.last_name
-	,emp.gender
-FROM employees emp
-WHERE emp.emp_no IN (
-	SELECT sal.emp_no
-	FROM salaries sal
-	GROUP BY sal.emp_no
-		HAVING AVG(salary) >= 70000
-	);
-
-
-
-
-
-
-
 -- 10. 현재 직책이 "Senior Engineer"인, 사원의 사원번호와 성을 조회해 주세요.
 SELECT
 	emp_no
