@@ -62,7 +62,7 @@ ALTER TABLE users ADD CONSTRAINT uk_users_user_member_id UNIQUE (user_member_id)
 ALTER TABLE users DROP CONSTRAINT uk_users_user_member_id;
 
 -- user_member_id 데이터타입 변경
--- 낫널까지 원래 있던 제약조건 전부적어야 함
+-- 낫널까지 원래 있던 제약조건 전부 적어야 함
 -- 가지고 있는 원본 데이터가 날아갈 수 있기 때문에 줄일 수 없고 주의해야 함
 -- 임시 테이블에 백업해두고 새로 만든 후 인서트까지 해야함
 -- 서버 스펙이 낮아지지 않는 한 줄일 일 없음 애초에 넉넉하게 잡기
@@ -82,5 +82,8 @@ DROP DATABASE test;
 -- 백업파일이 없는 경우 복구 불가능
 -- 현업에서는 하루 한번 모든 데이터 백업
 TRUNCATE TABLE titles;
+
+
+
 
 
