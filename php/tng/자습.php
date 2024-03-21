@@ -1,5 +1,6 @@
 <?php 
 
+// 240318
 // function sum_all(...$sum_numbers) { // 몇 개의 값이 올 지 모름
 //     $sum = 0; // 값을 담을 공간 지정
 //     foreach ($sum_numbers as $val) { 
@@ -29,12 +30,37 @@
 
 // echo "--------------------------------------------------\n";
 
+// 240320
+// for($i = 1; $i <= 100; $i++) {
+//     if($i % 3 !== 0) {
+//         echo $i."입니다.\n"; 
+//     }
+//     else {
+//         echo "짝!\n"; 
+//     }
+// }
 
-for($i = 1; $i <= 100; $i++) {
-    if($i % 3 !== 0) {
-        echo $i."입니다.\n"; 
-    }
-    else {
-        echo "짝!\n"; 
-    }
-}
+//240321
+
+$dbHost = "localhost";
+$dbUser = "root";
+$dbPw = "php505";
+$dbName = "employees";
+$dbCharset = "utf8mb4";
+$dbDsn = "mysql:host=".$dbHost."dbName=".$dbName."charset=".$dbCharse;
+
+$opt = [
+    PDO::ATTR_EMULATE_PREPARES => false
+    ,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+]
+
+$conn = new PDO($dbDsn, $dbUser, $dbPw, $opt);
+
+$sql = "SELECT * FROM employees LIMIT 5 ";
+
+$smtm = $conn->query($sql);
+$rresult = $stmt->fetchAll();
+print_r($result);
+
+$conn = NULL;
