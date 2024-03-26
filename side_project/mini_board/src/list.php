@@ -56,7 +56,7 @@ try {
     
     <main>
         <div class="main-top">
-            <a href="./insert.html" class="a-button">글 작성</a>
+            <a href="./insert.php" class="a-button">글 작성</a>
         </div>
         <div class="main-middle">
             <div class="item list-head">
