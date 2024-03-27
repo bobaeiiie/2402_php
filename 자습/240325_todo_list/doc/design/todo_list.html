@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,11 @@
 </head>
 <body>
     <header>
-        <div><h1><a href="./main.html"><em>TO-DO LIST</em></a></h1></div>
+        <div class="header-logo"><h1><a href="./main.html">TO-DO LIST</a></h1></div>
         <div class="search">
             <form action="" method="post">
                 <input type="search" name="search" id="search" class="search-place" placeholder="검색어를 입력하세요.">
-                <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
         <div class="main-etc">
@@ -25,11 +25,11 @@
     <main>
         <div class="main-nav">
             <div class="nav-item-1">
-                <div class="nav-page">
+                <!-- <div class="nav-page">
                     <button class="page-btn"><i class="fa-solid fa-caret-left"></i></button>
                     <button class="page-btn"><i class="fa-solid fa-caret-right"></i></button>
                     <button class="page-btn"><i class="fa-solid fa-marker"></i></button>
-                </div>
+                </div> -->
             </div>
             <a href="./todo_list.html"><div class="nav-item nav-item-select page-link">To-do List</div></a>
             <a href="./quick-memo.html"><div class="nav-item  page-link">Quick Memo</div></a>
@@ -39,60 +39,73 @@
             <div class="todo-container">
                 <a href="./detail.html" class="detail-link">
                     <div class="todo-pad">
-                        <div class="name-place">김00</div>
-                        <div class="title-place">제목</div>
-                        <div class="content-place">내용</div>
-                        <div class="emotion">
-                            <i class="fa-solid fa-face-laugh-squint emotion-2"></i>
-                            <i class="fa-solid fa-face-surprise emotion-2"></i>
-                            <i class="fa-solid fa-face-sad-tear emotion-2"></i>
-                            <i class="fa-solid fa-face-kiss-wink-heart emotion-2"></i>
+                        <div class="profile-place">
+                            <i class="fa-solid fa-user fa-user-1"></i>
                         </div>
+                        <div class="name-place">
+                            <span class="name">권땡땡</span>
+                        </div>
+                        <div class="title-place">
+                            <div><i class="fa-solid fa-quote-left"></i></div>
+                            <span class="goal">야구장 직관 가기</span>
+                            <div><i class="fa-solid fa-quote-right"></i></div>
+                        </div>
+                        <span class="complete">checked</span>
                     </div>
                 </a>
                 <a href="./detail.html" class="detail-link">
                     <div class="todo-pad">
-                        <div class="name-place">이00</div>
-                        <div class="title-place">제목</div>
-                        <div class="content-place">내용</div>
-                        <div class="emotion">
-                            <i class="fa-solid fa-face-laugh-squint emotion-2"></i>
-                            <i class="fa-solid fa-face-surprise emotion-2"></i>
-                            <i class="fa-solid fa-face-sad-tear emotion-2"></i>
-                            <i class="fa-solid fa-face-kiss-wink-heart emotion-2"></i>
+                        <div class="profile-place">
+                            <i class="fa-solid fa-user fa-user-1"></i>
                         </div>
+                        <div class="name-place">
+                            <span class="name">김00</span>
+                            <!-- <span class="complete">님이</span> -->
+                        </div>
+                        <div class="title-place">
+                            <div><i class="fa-solid fa-quote-left"></i></div>
+                            <span class="goal">야구장 직관 가기</span>
+                            <div><i class="fa-solid fa-quote-right"></i></div>
+                        </div>
+                        <span class="complete">checked</span>
                     </div>
                 </a>
                 <a href="./detail.html" class="detail-link">
                     <div class="todo-pad">
-                        <div class="name-place">박00</div>
-                        <div class="title-place">제목</div>
-                        <div class="content-place">내용</div>
-                        <div class="emotion">
-                            <i class="fa-solid fa-face-laugh-squint emotion-2"></i>
-                            <i class="fa-solid fa-face-surprise emotion-2"></i>
-                            <i class="fa-solid fa-face-sad-tear emotion-2"></i>
-                            <i class="fa-solid fa-face-kiss-wink-heart emotion-2"></i>
+                        <div class="profile-place">
+                            <i class="fa-solid fa-user fa-user-1"></i>
                         </div>
+                        <div class="name-place">
+                            <span class="name">김00</span>
+                            <!-- <span class="complete">님이</span> -->
+                        </div>
+                        <div class="title-place">
+                            <div><i class="fa-solid fa-quote-left"></i></div>
+                            <span class="goal">야구장 직관 가기</span>
+                            <div><i class="fa-solid fa-quote-right"></i></div>
+                        </div>
+                        <span class="complete">checked</span>
                     </div>
                 </a>
                 <a href="./detail.html" class="detail-link">
                     <div class="todo-pad">
-                        <div class="name-place">최00</div>
-                        <div class="title-place">제목</div>
-                        <div class="content-place">내용</div>
-                        <div class="emotion">
-                            <i class="fa-solid fa-face-laugh-squint emotion-2"></i>
-                            <i class="fa-solid fa-face-surprise emotion-2"></i>
-                            <i class="fa-solid fa-face-sad-tear emotion-2"></i>
-                            <i class="fa-solid fa-face-kiss-wink-heart emotion-2"></i>
+                        <div class="profile-place">
+                            <i class="fa-solid fa-user fa-user-1"></i>
                         </div>
+                        <div class="name-place">
+                            <span class="name">김00</span>
+                            <!-- <span class="complete">님이</span> -->
+                        </div>
+                        <div class="title-place">
+                            <div><i class="fa-solid fa-quote-left"></i></div>
+                            <span class="goal">야구장 직관 가기</span>
+                            <div><i class="fa-solid fa-quote-right"></i></div>
+                        </div>
+                        <span class="complete">checked</span>
                     </div>
                 </a>
             </div>
         </div>
-
-
 
     </main>
     <footer>
