@@ -59,7 +59,7 @@ try {
             $arr_param = [
                 "no" => $no
             ];
-            $result = de_delete_boards_no($conn, $arr_param);
+            $result = db_delete_boards_no($conn, $arr_param);
 
             // 석제 예외 처리
             if($result !== 1) {
