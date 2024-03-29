@@ -20,7 +20,7 @@ try {
     $max_page_number = ceil($result_board_cnt / $list_cnt); // 최대 페이지 수
     $offset = $list_cnt * ($page_num - 1); // 오프셋
     $prev_page_num = ($page_num - 1) < 1 ? 1 : ($page_num - 1); // 이전 버튼 페이지 번호
-    $next_page_num = ($page_num + 1) > $max_page_number ? $max_page_number : ($page_num + 1);; // 다음 버튼 페이지 번호
+    $next_page_num = ($page_num + 1) > $max_page_number ? $max_page_number : ($page_num + 1); // 다음 버튼 페이지 번호
 
     // 게시글 리스트 조회
     $arr_param = [
@@ -68,9 +68,9 @@ try {
             foreach($result as $item) {
             ?>
                 <div class="item">
-                        <div class="item-no"><?php echo $item["no"] ?></div>
-                        <div class="item-title"><a href="./detail.php?no=<?php echo $item["no"]?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
-                        <div class="board-created-at"><?php echo $item["created_at"] ?></div>
+                    <div class="item-no"><?php echo $item["no"] ?></div>
+                    <div class="item-title"><a href="./detail.php?no=<?php echo $item["no"]?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
+                    <div class="board-created-at"><?php echo $item["created_at"] ?></div>
                 </div> 
             <?php 
             }
