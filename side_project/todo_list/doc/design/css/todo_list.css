@@ -94,6 +94,14 @@ a {
     box-shadow: 1px 2px 5px 2px rgba(189, 189, 189, 0.5);
 }
 
+.main-container-update {
+    background-color: white;
+    display: grid;
+    grid-template-rows: 3fr 0.5fr;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px 2px rgba(189, 189, 189, 0.5);
+}
+
 .logo-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -141,6 +149,10 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     
+}
+
+.todo-container-update {
+    height: 700px;
 }
 
 .main-nav {
@@ -232,6 +244,15 @@ a {
     box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
 }
 
+.todo-container-update-list {
+    background-color: #e9e9e9;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
+    display: grid;
+    grid-template-rows: 4fr 5fr;
+}
+
 .todo-container-detail {
     height: 95%;
     margin: 10px;
@@ -264,11 +285,34 @@ a {
     padding: 0 40px 0 40px;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 4fr 1fr;
     font-size: 1.2rem;
-    line-height: 35px;
+    place-items: center;
     box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
 }
+
+.todo-pad-update-list:hover {
+    color: #8DAB9F;
+    background-color: rgb(248, 248, 248)
+}
+
+.update-title-place {
+    width: 300px;
+    place-items: center;
+    border-radius: 50px;
+    background-color: #527062;
+    margin: 30px auto;
+}
+
+.update-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    border-radius: 25px;
+    text-align: center;
+}
+
 
 .chkbox-place {
     display: grid;
@@ -293,7 +337,6 @@ a {
     cursor: pointer;
 }
 
-
 .chkbox:checked {
     background-color: #8DAB9F;
 }
@@ -302,9 +345,18 @@ a {
     color: #939393;
 }
 
+/* .content-title-update {
+    font-size: 1.5rem;
+} */
+
 .created-at {
     color: #939393;
+    
 }
+
+/* .creted-at-update {
+    align-items: center;
+} */
 
 .detail-link {
     width: 100%;

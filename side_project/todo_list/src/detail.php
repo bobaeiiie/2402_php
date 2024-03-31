@@ -80,7 +80,7 @@ try {
                 <div></div>  
             </div>
             <div class="todo-container-detail-list">
-                <?php
+            <?php
                 foreach($result as $item) {
                 ?>
                 <div class="todo-pad-list">
