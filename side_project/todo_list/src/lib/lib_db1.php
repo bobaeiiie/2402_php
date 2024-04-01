@@ -155,3 +155,21 @@ function db_delete_boards_no(&$conn, &$array_param) {
         // 리턴
         return $stmt->rowCount();
     }
+
+    function db_insert_boards(&$conn, &$array_param) {
+        //SQL
+        $sql =
+            "INSERT INTO contents (
+                content
+            )
+            VALUES (
+                :content ) "
+            ;
+    
+        // Query 실행
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($array_param);
+    
+        // 리턴
+        return $stmt->rowCount();
+    }
