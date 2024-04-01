@@ -2,6 +2,8 @@
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/bobae/config1.php"); // 서버루트												
 require_once(FILE_LIB_DB); // DB관련 라이브러리
+$list_cnt = 5;
+$page_num = 1;
 
 
 try {
@@ -66,12 +68,12 @@ try {
             <div class="nav-item-1">
             </div>
             <a href="./todo_list.php"><div class="nav-item nav-item-select page-link">To-do List</div></a>
-            <a href="./quick-memo.php"><div class="nav-item  page-link">Quick Memo</div></a>
-            <a href="./my-page.php"><div class="nav-item  page-link">My Page</div></a>
+            <a href="./todo_list.php"><div class="nav-item  page-link">Quick Memo</div></a>
+            <a href="./todo_list.php"><div class="nav-item  page-link">My Page</div></a>
         </div>
         <div class="main-container">
             <div class="todo-container">
-                <a href="./detail.php" class="detail-link">
+                <a href="./detail.php?page=<?php echo $page_num ?>" class="detail-link">
                     <div class="todo-pad">
                         <div class="profile-place">
                             <i class="fa-solid fa-user fa-user-1"></i>

@@ -20,14 +20,11 @@ h1 {
     font-size: 3rem;
 }
 
-input, textarea {
+textarea {
     width: 90%;
+    resize: none;
     background-color: transparent;
     border-style: none;
-    outline-color: #9fb1ff;
-}
-textarea {
-    resize: none;
 }
 
 button {
@@ -57,13 +54,6 @@ h1 > a {
 
 .a-button:hover {
     background-color: #6581ff;
-}
-
-.small-button {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
 }
 
 main {

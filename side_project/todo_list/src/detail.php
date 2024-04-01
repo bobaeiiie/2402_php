@@ -9,6 +9,7 @@ try {
 
     $conn = my_db_conn();
 
+    $no = isset($_GET["content_no"]) ? $_GET["content_no"] : "";
     $page_num= isset($_GET["page"]) ? $_GET["page"] : $page_num;
 
     $result_board_cnt = db_select_boards_cnt($conn);
@@ -28,7 +29,7 @@ try {
 
 } catch(\Throwable $e) {
     echo $e->getMessage();
-    // exit;
+    exit;
 
 } finally {
     if(!empty($conn)) {
@@ -94,10 +95,10 @@ try {
                         <label for="chkbox"><div class="content-title"><?php echo $item["content"] ?></div></label>
                     </div>
                     <div class="created-at"><?php echo $item["created_at"] ?></div>
-                    <a href="./update.php" class="detail-link">
+                    <a href="./update.php?content_no=<?php echo $item["content_no"] ?>&page=<?php echo $page_num ?>" class="detail-link">
                         <div><i class="fa-solid fa-pencil"></i></div>
                     </a>
-                    <a href="./delete.php" class="detail-link">
+                    <a href="./delete.php?content_no=<?php echo $item["content_no"] ?>&page=<?php echo $page_num ?>" class="detail-link">
                         <div><i class="fa-solid fa-trash-can"></i></div>
                     </a>
                 </div>

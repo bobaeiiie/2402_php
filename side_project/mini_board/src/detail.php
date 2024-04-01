@@ -4,6 +4,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/config.php"); // 설정 파일 호출
 require_once(FILE_LIB_DB); // DB 관련 라이브러리 호출
 
 try {
+    
     //DB Connect
     $conn = my_db_conn(); //PDO 인스턴스 생성
 

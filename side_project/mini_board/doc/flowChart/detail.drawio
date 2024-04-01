@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net" modified="2024-04-01T03:45:19.288Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="mn69FDWAhxAIQtkoa1ZU" version="24.2.1" type="device">
+  <diagram name="페이지-1" id="ZApP2FcAXQKgAyX4lefu">
+    <mxGraphModel dx="1427" dy="1416" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-1" target="GL-MZvgiuf7fWlvY0q_p-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-1" value="디테일&amp;nbsp;페이지&lt;br&gt;시작" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="128" y="130" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-2" value="디테일 페이지&lt;br&gt;종료" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="128" y="840" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-3" target="GL-MZvgiuf7fWlvY0q_p-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-3" value="DB 접속" style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="118" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-8" value="파라미터 획득" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="111" y="470" width="134" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-9" target="GL-MZvgiuf7fWlvY0q_p-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-9" target="GL-MZvgiuf7fWlvY0q_p-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-9" value="DB 접속 예외 발생" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="330" width="136" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-12" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="178" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-14" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="440" y="370" as="geometry">
+            <mxPoint x="-3" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-15" value="예외 메세지 출력" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="500" y="720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" target="GL-MZvgiuf7fWlvY0q_p-26" source="GL-MZvgiuf7fWlvY0q_p-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145" y="520" as="sourcePoint" />
+            <mxPoint x="178" y="580" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-23" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GL-MZvgiuf7fWlvY0q_p-22">
+          <mxGeometry x="-0.0666" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-26" value="게시글 정보&lt;br&gt;획득" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="110" y="600" width="136" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-32" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" target="GL-MZvgiuf7fWlvY0q_p-54" source="GL-MZvgiuf7fWlvY0q_p-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="700" as="sourcePoint" />
+            <mxPoint x="178" y="710" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-33" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GL-MZvgiuf7fWlvY0q_p-32">
+          <mxGeometry x="-0.0666" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-51" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245" y="510" as="sourcePoint" />
+            <mxPoint x="560" y="509.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="387" y="510.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-52" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GL-MZvgiuf7fWlvY0q_p-51">
+          <mxGeometry x="0.1593" y="2" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.846;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=2;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-54" target="GL-MZvgiuf7fWlvY0q_p-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-54" value="화면에 출력" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="118" y="720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-56" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;exitX=0.523;exitY=0.912;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-15" target="GL-MZvgiuf7fWlvY0q_p-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="1100" as="sourcePoint" />
+            <mxPoint x="410" y="1176" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-83" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245" y="640" as="sourcePoint" />
+            <mxPoint x="560" y="639.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="387" y="640.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-84" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GL-MZvgiuf7fWlvY0q_p-83">
+          <mxGeometry x="0.1593" y="2" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-85" value="수정 버튼 클릭" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="130" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-89" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL-MZvgiuf7fWlvY0q_p-86" target="GL-MZvgiuf7fWlvY0q_p-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-86" value="수정 페이지로 이동" style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="620" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-87" value="처리 종료" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="350" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GL-MZvgiuf7fWlvY0q_p-88" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="679.09" y="190" as="sourcePoint" />
+            <mxPoint x="679.09" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -40,9 +40,9 @@ require_once(FILE_LIB_DB);
         </main>
         <main2>
             <div class="main-to-page-container">
-                <a href="./todo_list.html"><div class="main-to-page">To-Do List</div></a>
-                <a href=""><div class="main-to-page">Quick Memo</div></a>
-                <a href=""><div class="main-to-page">My Page</div></a>
+                <a href="./todo_list.php"><div class="main-to-page">To-Do List</div></a>
+                <a href="./todo_list.php"><div class="main-to-page">Quick Memo</div></a>
+                <a href="./todo_list.php"><div class="main-to-page">My Page</div></a>
             </div>
         </main2>
         <footer>

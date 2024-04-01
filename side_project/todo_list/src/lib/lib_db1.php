@@ -53,7 +53,7 @@ function db_select_boards_paging(&$conn, &$array_param) {
         WHERE	
             deleted_at IS NULL
         ORDER BY	
-            created_at DESC
+            content_no DESC
         LIMIT :list_cnt OFFSET :offset "
     ;
 
@@ -94,3 +94,64 @@ function db_update_contents_checked_at(&$conn, &$array_param) {
     // 리턴
     return $stmt->rowCount();
 }
+
+function db_select_boards_no(&$conn, &$arr_param){
+    //SQL
+    $sql = 
+        "SELECT
+            content
+            ,content_no
+            ,created_at
+        FROM	
+            contents
+        WHERE	
+            content_no = :content_no "
+    ;
+
+    // Query 실행
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($arr_param);
+    $result = $stmt->fetchAll(); 
+
+    // 리턴
+    return $result;
+
+    }
+
+function db_update_boards_no(&$conn, &$array_param) {
+    //SQL
+    $sql =
+        "UPDATE contents
+         SET
+            content = :content
+            ,updated_at = NOW() 
+         WHERE	
+            content_no = :content_no " 
+    ;
+
+        // Query 실행
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($array_param);
+    
+        // 리턴
+        return $stmt->rowCount();
+    }
+
+
+function db_delete_boards_no(&$conn, &$array_param) {
+    //SQL
+    $sql =
+        "UPDATE contents	
+            SET	
+            deleted_at = now()
+            WHERE	
+            content_no = :content_no " 
+        ;
+
+        // Query 실행
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($array_param);
+    
+        // 리턴
+        return $stmt->rowCount();
+    }
