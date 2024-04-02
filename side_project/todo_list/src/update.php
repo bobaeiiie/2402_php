@@ -133,22 +133,20 @@ try {
                 <a href="./todo_list.php"><div class="nav-item  page-link">My Page</div></a>
             </div>
             <div class="main-container-update">
-                <div class="todo-container-update">
-                    <div class="todo-container-update-list">
-                        <div class="update-title-place">
-                            <div class="update-title">To-do 수정하기</div>
+                <div class="todo-container-update-list">
+                    <div class="update-title-place">
+                        <div class="update-title">To-do 수정하기</div>
+                    </div>
+                    <div class="todo-pad-update-list">
+                        <div class="chkbox-place-update">
+                            <textarea name="content" id="content" class="content-title-update"><?php echo $item["content"]; ?></textarea>
                         </div>
-                        <div class="todo-pad-update-list">
-                            <div class="chkbox-place-update">
-                                <textarea name="content" id="content" columns="40" rows="10" class="content-title-update"><?php echo $item["content"]; ?></textarea>
-                            </div>
-                        </div>
-
+                        <div class="created-at-update"><?php echo $item["created_at"]; ?></div>
                     </div>
                 </div>
                 <div class="pagenation">
                     <button type="submit" class="page-move">수정</button>
-                    <button><a href="./detail.php?content_no=<?php echo $no ?>&page=<?php echo $page ?>" class="page-move">취소</a></button>
+                    <button class="page-move"><a href="./detail.php?content_no=<?php echo $no ?>&page=<?php echo $page ?>">취소</a></button>
                 </div>
             </div>
         </form>

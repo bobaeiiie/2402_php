@@ -54,9 +54,11 @@ try {
     <header>
         <div class="header-logo"><h1><a href="./main.php">TO-DO LIST</a></h1></div>
         <div class="search">
-            <form action="" method="post">
-                <input type="search" name="search" id="search" class="search-place" placeholder="검색어를 입력하세요.">
-                <button class="plus-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <form action="./main.php" method="post">
+                <input class ="insert-input" type="text" name="content" id="content" placeholder="   Todo를 추가하세요.">
+                <button class="plus-btn" type="submit"><i class="fa-solid fa-plus fa-beat"></i></button>
+                <!-- <input type="search" name="search" id="search" class="search-place" placeholder="   Todo를 추가하세요."> -->
+
             </form>
         </div>
         <div class="main-etc">

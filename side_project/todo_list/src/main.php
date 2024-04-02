@@ -42,7 +42,7 @@ if(REQUEST_METHOD === "POST") { //
         $conn->commit();
 
         // 리스트 페이지로 이동
-        header("Location: main.php");
+        header("Location: detail.php");
         // exit;
 
     } catch(\Throwable $e) {
@@ -66,7 +66,7 @@ if(REQUEST_METHOD === "POST") { //
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/todo_list.css">
+    <link rel="stylesheet" href="./css/todo_list.css?after">
     <title>메인 페이지</title>
     <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
 </head>
@@ -85,12 +85,12 @@ if(REQUEST_METHOD === "POST") { //
             <div class="logo-container">
                 <div class="logo">
                     <div><h1><a href="./main.php" class="logo-text">TO-DO LIST</a></h1></div>
+                    <div> </div>
                 </div>
                 <div class="search">
                     <form action="./main.php" method="post">
-                        <input class = "insert_input" type="text" name="content" id="content" placeholder="   Todo를 추가하세요.">
+                        <input class ="insert-input" type="text" name="content" id="content" placeholder="   Todo를 추가하세요.">
                         <button class="plus-btn" type="submit"><i class="fa-solid fa-plus fa-beat"></i></button>
-                        <!-- <input type="search" name="search" id="search" class="search-place" placeholder="   Todo를 추가하세요."> -->
 
                     </form>
                 </div>

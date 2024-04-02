@@ -32,27 +32,22 @@ h1 > a {
     font-size: 2.5rem;
 }
 
-h1 > a:hover {
-    color: #DBCFC8;
-    transition: all 1s;
-}
-
 a {
     text-decoration: none;
+    color: #3F3F48;
 }
 
-.search-place {
+.insert-input {
     background-color: white;
     border-radius: 20px;
     width: 70%;
-    height: 45px;
+    height: 50px;
     border: none;
     outline: none;
 }
 
 .plus-btn {
     padding: 10px 20px;
-
     color: #527062;
     background-color: transparent;
     border: none;
@@ -89,7 +84,13 @@ a {
 .main-container-detail {
     background-color: white;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px 2px rgba(189, 189, 189, 0.5);
+}
+
+.main-container-update {
+    background-color: white;
     border-radius: 20px;
     box-shadow: 1px 2px 5px 2px rgba(189, 189, 189, 0.5);
 }
@@ -124,7 +125,7 @@ a {
 }
 
 .main-to-page {
-    color: #3F3F48;
+    color: #8DAB9F;
     font-weight: 900;
     font-size: 1.5rem;
 }
@@ -141,6 +142,10 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     
+}
+
+.todo-container-update {
+    height: 450px;
 }
 
 .main-nav {
@@ -232,6 +237,13 @@ a {
     box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
 }
 
+.todo-container-update-list {
+    background-color: #e9e9e9;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
+}
+
 .todo-container-detail {
     height: 95%;
     margin: 10px;
@@ -240,13 +252,21 @@ a {
 
 }
 
+textarea {
+    width: 50%;
+    resize: none;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 50px;
+}
+
 .todo-pad-list {
     background-color: #ffffff;
     margin: 10px;
     padding: 0 40px 0 40px;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 6fr 4fr 2fr 2fr;
+    grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
     place-items: center;
     font-size: 1.2rem;
     line-height: 35px;
@@ -258,14 +278,52 @@ a {
     background-color: rgb(248, 248, 248);
 }
 
-.chkbox-place {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.todo-pad-update-list {
+    height: 300px;
+    background-color: white;
+    margin: 50px 20px 20px 20px;
+    padding: 0 40px 0 40px;
+    border-radius: 20px;
+    font-size: 1.2rem;
     place-items: center;
+    box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
 }
 
-.chkbox-place:checked {
-    margin: 50px;
+.update-title-place {
+    width: 300px;
+    place-items: center;
+    border-radius: 50px;
+    background-color: #527062;
+    margin: 30px auto;
+}
+
+.update-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.content-title-update {
+    width: 70%;
+    height: 150px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #939393;
+    place-items: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 70px;
+}
+
+form {
+    padding: 5px;
+    margin: 0;
 }
 
 .chkbox {
@@ -281,24 +339,21 @@ a {
     cursor: pointer;
 }
 
-
-/* .chkbox:checked {
-    background-color: #8DAB9F;
-} */
-
-/* .chkbox:checked + label {
-    color: #939393;
-} */
 .chkbox-checked {
     background-color: #8DAB9F;
 }
+
 .btn-com {
     display: none;
 }
 
-
 .created-at {
     color: #939393;
+}
+
+.created-at-update {
+    color: #939393;
+    text-align: center;
 }
 
 .detail-link {
@@ -318,7 +373,7 @@ a {
     align-items: center;
     justify-content: center;
     height: 70px;
-    margin-top: 20px;
+    margin: 30px 0 10px 0;
 }
 
 .page-num {
@@ -345,6 +400,7 @@ a {
     border-radius: 25px;
     background-color: white;
     box-shadow: 2px 3px 5px 2px rgba(184, 184, 184, 0.5);
+    border: none;
 }
 
 [class^="page-"]:hover {
@@ -364,9 +420,9 @@ a {
 }
 
 .profile-place-detail {
-    margin: 50px;
-    width: 150px;
-    height: 150px;
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
     background-color: #8DAB9F;
     border-radius: 150px;
     text-align: center;
@@ -384,7 +440,7 @@ a {
 }
 
 .fa-user-detail {
-    font-size: 5rem;
+    font-size: 8rem;
     color: #ffffff;
 
 }
@@ -441,8 +497,7 @@ a {
     background-color: transparent;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    /* border-top: solid 3px rgba(77, 71, 71, 30%);
-    border-bottom: solid 3px rgba(77, 71, 71, 30%); */
+
 }
 
 .fa-quote-left, .fa-quote-right {
@@ -481,3 +536,7 @@ footer p {
     color: #D7D8DF;
     font-size: 0.7rem;
 } 
+
+.footer_btn {
+    border: none;
+}

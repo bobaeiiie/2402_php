@@ -55,7 +55,14 @@ try {
 <body>
     <header>
         <div><h1><a href="./main.php">TO-DO LIST</a></h1></div>
-        <div></div>
+        <div class="search">
+            <form action="./main.php" method="post">
+                <input class ="insert-input" type="text" name="content" id="content" placeholder="   Todo를 추가하세요.">
+                <button class="plus-btn" type="submit"><i class="fa-solid fa-plus fa-beat"></i></button>
+                <!-- <input type="search" name="search" id="search" class="search-place" placeholder="   Todo를 추가하세요."> -->
+
+            </form>
+        </div>
         <div class="main-etc">
             <button class="etc-btn"><i class="fa-solid fa-right-to-bracket"></i></button>
             <button class="etc-btn"><i class="fa-solid fa-bell"></i></button>
@@ -85,24 +92,24 @@ try {
             <?php
                 foreach($result as $item) {
                 ?>
-                <div class="todo-pad-list">
-                    <div class="chkbox-place">
-                        <form action="./com.php" method="post">
+                <form action="./com.php" method="post">
+                    <div class="todo-pad-list">
+                        <div class="chkbox-place">
                             <input type="hidden" name="content_no" value="<?php echo $item["content_no"] ?>">
                             <input type="hidden" name="page" value="<?php echo $page_num ?>">
                             <label for="chk-com<?php echo $item["content_no"] ?>" class="chkbox <?php echo empty($item["checked_at"]) ? "" : "chkbox-checked" ?>"></label>
                             <button type="submit" class="btn-com" id="chk-com<?php echo $item["content_no"] ?>"></button>
-                        </form>
+                        </div>
                         <label for="chkbox"><div class="content-title"><?php echo $item["content"] ?></div></label>
+                        <div class="created-at"><?php echo $item["created_at"] ?></div>
+                        <a href="./update.php?content_no=<?php echo $item["content_no"] ?>&page=<?php echo $page_num ?>" class="detail-link">
+                            <div><i class="fa-solid fa-pencil"></i></div>
+                        </a>
+                        <a href="./delete.php?content_no=<?php echo $item["content_no"] ?>&page=<?php echo $page_num ?>" class="detail-link">
+                            <div><i class="fa-solid fa-trash-can"></i></div>
+                        </a>
                     </div>
-                    <div class="created-at"><?php echo $item["created_at"] ?></div>
-                    <a href="./update.php?content_no=<?php echo $item["content_no"] ?>&page=<?php echo $page_num ?>" class="detail-link">
-                        <div><i class="fa-solid fa-pencil"></i></div>
-                    </a>
-                    <a href="./delete.php?content_no=<?php echo $item["content_no"] ?>&page=<?php echo $page_num ?>" class="detail-link">
-                        <div><i class="fa-solid fa-trash-can"></i></div>
-                    </a>
-                </div>
+                </form>
                 <?php 
                 }
                 ?>

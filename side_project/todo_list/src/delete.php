@@ -120,17 +120,15 @@ try {
                 <a href="./todo_list.php"><div class="nav-item  page-link">My Page</div></a>
             </div>
             <div class="main-container-update">
-                <div class="todo-container-update">
-                    <div class="todo-container-update-list">
-                        <div class="update-title-place">
-                            <div class="update-title">To-do 삭제하기</div>
+                <div class="todo-container-update-list">
+                    <div class="update-title-place">
+                        <div class="update-title">To-do 삭제하기</div>
+                    </div>
+                    <div class="todo-pad-update-list">
+                        <div class="chkbox-place-update">
+                            <label for="chkbox"><div class="content-title-update"><?php echo $item["content"]; ?></div></label>
                         </div>
-                        <div class="todo-pad-update-list">
-                            <div class="chkbox-place-update">
-                                <label for="chkbox"><div class="content-title-update"><?php echo $item["content"]; ?></div></label>
-                            </div>
-                            <div class="created-at-update"><?php echo $item["created_at"]; ?></div>
-                        </div>
+                        <div class="created-at-update"><?php echo $item["created_at"]; ?></div>
                     </div>
                 </div>
                 <div class="pagenation">
