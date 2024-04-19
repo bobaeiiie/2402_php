@@ -100,15 +100,33 @@ let letSymbol2 = Symbol('심볼');
 // 연산자
 
 
-function mytest() {
-    if(true) {
-        if(true) {
-            let test02 = 'test02';
-            console.log(test02);
-        }
-        let test01 = 'test01';
-        console.log(test01);
-        console.log(test02);
-    }
-}
-mytest();
+// function mytest() {
+//     if(true) {
+//         if(true) {
+//             let test02 = 'test02';
+//             console.log(test02);
+//         }
+//         let test01 = 'test01';
+//         console.log(test01);
+//         console.log(test02);
+//     }
+// }
+// mytest();
+
+let lunch = '점심메뉴';
+let tang = '탕수육 8,000';
+let jja = '짜장면 6,000';
+let jjam = '짬뽕 6,000';
+
+console.log(lunch);
+console.log(tang);
+console.log(jja);
+console.log(jjam);
+
+let tng_num = 100;
+
+console.log('현재 tng_num의 값: ' + (tng_num + 10));
+console.log('현재 tng_num의 값: ' + (tng_num / 5));
+console.log('현재 tng_num의 값: ' + (tng_num - 4));
+console.log('현재 tng_num의 값: ' + (tng_num % 7));
+console.log('현재 tng_num의 값: ' + (tng_num * 3));
