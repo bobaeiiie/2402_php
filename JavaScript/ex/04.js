@@ -94,8 +94,8 @@ let arr = [1, 2, 3];
 // symbol 심볼
 let letStr1 = '심볼1';
 let letStr2 = '심볼1';
-let letSymbol1 = Symbol('심볼');
-let letSymbol2 = Symbol('심볼');
+let letSymbol1 = Symbol('심볼1');
+let letSymbol2 = Symbol('심볼1');
 
 // 연산자
 
