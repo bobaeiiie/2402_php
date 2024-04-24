@@ -1,0 +1,21 @@
+.modal-container {
+    /* padding-top: 50vh; */
+    background-color: transparent;
+    width: 100vW;
+    height: 100vH;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal-item {
+    margin: 10% auto;
+    background-color: pink;
+    width: 50%;
+    height: 50%;
+}
+
+.display-none {
+    display: none;
+}
+

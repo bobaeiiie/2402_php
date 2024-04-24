@@ -1,0 +1,13 @@
+.con {
+    width: 100px;
+    height: 100px;
+    margin: 10% auto;
+    background-color: white;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 20% auto;
+    border: dashed 2px pink;
+}
+
