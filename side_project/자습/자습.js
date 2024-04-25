@@ -25,4 +25,4 @@ function memo(e) {
     AREA.addEventListener('click', memo);
 }
 
-IN_MEMO.style.backgroundImage = 'url(./image/memo_1.png)';
+// IN_MEMO.style.backgroundImage = 'url(./image/memo_1.png)';
