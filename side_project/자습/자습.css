@@ -6,13 +6,16 @@ body {
 .con {
     width: 100vw;
     height: 100vh;
-    background-color: grey;
+    background-image: url(./image/bgi.png);
+    background-size: cover;
 }
 
 .in-memo {
-    width: 200px;
+    padding: 10px;
+    width: 100px;
     height: 100px;
-    background-color: yellow;
-    border: none;
+    background-image: url(./image/memo_1.png);
+    background-size: cover;
+    border: none; 
     outline: none;
 }
