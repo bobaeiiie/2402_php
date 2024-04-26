@@ -51,3 +51,7 @@ STOP.addEventListener('click', () => {
 RESTART.addEventListener('click', () => {
     interval = setInterval(timeFnc, 1000);
 });
+
+
+// 강사님 풀이
+

@@ -1,0 +1,40 @@
+.con {
+    width: 100vW;
+    display: grid;
+}
+
+.title_con {
+    height: 100px;
+    background-color: black;
+    text-align: center;
+    line-height: 100px;
+    justify-content: center;
+    
+}
+
+.title {
+    margin: auto;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.input_btn {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    padding: 10px 50px 10px 50px;
+}
+
+#url {
+    width: 300px;
+}
+
+button {
+    margin-left: 20px;
+}
+
+.img_con {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}

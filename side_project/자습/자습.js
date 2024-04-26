@@ -1,6 +1,7 @@
 const AREA = document.querySelector('.con');
+// const MEMO_CON = document.querySelector('.memo-con');
+// const IN_MEMO = document.querySelector('.in-memo');
 AREA.addEventListener('click', memo);
-const IN_MEMO = document.querySelector('.in-memo');
 
 
 let inputElement = null;
@@ -11,7 +12,10 @@ function memo(e) {
     }
     const MEMO_X = e.clientX;
     const MEMO_Y = e.clientY;
+
     if(!inputElement){
+        const DIV = document.createElement('div');
+        DIV.classList.add('memo-con');
         const INPUT = document.createElement('input');
         INPUT.type = 'text';
         INPUT.placeholder = '메모 입력';
@@ -19,10 +23,14 @@ function memo(e) {
         INPUT.style.position = 'absolute';
         INPUT.style.left = `${MEMO_X}px`;
         INPUT.style.top = `${MEMO_Y}px`;
-        AREA.appendChild(INPUT);
+        DIV.appendChild(INPUT);
+        DIV.style.backgroundImage = 'url(./)';
+        AREA.appendChild(DIV);
     }
     
     AREA.addEventListener('click', memo);
 }
 
-// IN_MEMO.style.backgroundImage = 'url(./image/memo_1.png)';
+// let memo_color = 1
+
+// let memo_color_2 = `url(./image/memo_${memo_color}.png)`
