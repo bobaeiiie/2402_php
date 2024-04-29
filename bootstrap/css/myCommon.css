@@ -1,0 +1,22 @@
+main {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    place-items: center;
+    gap: 1rem;
+}
+
+/* .form-control {
+    width: 300px;
+} */
+
+/* .dropdown-menu {
+    background-color: #cfe2ff;
+} */
+
+.dropdown-item {
+    color: white;
+}

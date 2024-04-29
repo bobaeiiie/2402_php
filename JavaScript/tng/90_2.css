@@ -1,0 +1,7 @@
+.main {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: (autofit, minmax(200px, 1fr));
+}
