@@ -22,13 +22,17 @@
     <main class="vh-100 d-flex justify-content-center place-items-center">
         <form style="width: 300px" action="/user/login" method="post" class="login-form m-auto justify-content-center">
             <div class="mb-3">
-                <div class="form-text text-danger">에러에러에러</div>
+                <?php 
+                    foreach($this->arrErrorMsg as $val) {
+                        echo '<div class="form-text text-danger">'.$val.'</div>';
+                    }
+                ?>
                 <label for="u_email" class="form-label">이메일</label>
-                <input type="text" class="form-control" id="u_emial" name="u_email" required>
+                <input type="text" class="form-control" id="u_emial" name="u_email">
             </div>
             <div class="mb-3">
                 <label for="u_pw" class="form-label">비밀번호</label>
-                <input type="password" class="form-control" id="u_pw" name="u_pw" required>
+                <input type="password" class="form-control" id="u_pw" name="u_pw">
             </div>
             <button type="submit" class="btn btn-primary">로그인</button>
         </form>

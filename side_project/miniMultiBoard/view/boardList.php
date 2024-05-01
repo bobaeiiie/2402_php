@@ -29,12 +29,12 @@
                                 게시판
                             </a>
                             <ul class="dropdown-menu dropdown-menu-primary text-light">
-                                <li><a class="dropdown-item text-dark" href="./free.html">자유게시판</a></li>
+                                <li><a class="dropdown-item text-dark" href="./boardList.php">자유게시판</a></li>
                                 <li><a class="dropdown-item text-dark" href="./question.html">질문게시판</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <a href="./login.html" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
+                    <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
                 </div>
             </div>
         </nav>
