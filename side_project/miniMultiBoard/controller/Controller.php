@@ -1,9 +1,13 @@
 <?php
 namespace controller;
 
+use model\BoardsNameModel;
+
 class Controller {
     protected $arrErrorMsg = []; // 화면에 표시할 에러 메세지 리스트
- 
+    protected $arrBoardsNameInfo = []; // 게시글 드롭다운 리스트
+    protected $boardName = ""; // 게시판 이름
+  
     // 비로그인시 접속 불가능한 URL 리스트
     private $arrNeedAuth = [
         "board/list"
@@ -19,6 +23,12 @@ class Controller {
 
         // 유저 로그인 및 권한 체크
         $this->chkAuthorization();
+
+        // 헤더 드롭다운 리스트 획득
+        $modelBoardsName = new BoardsNameModel();
+        $this->arrBoardsNameInfo = $modelBoardsName->getBoardsNameList();
+        $modelBoardsName->distroy();
+        
 
         // 해당 action 호출
         // view 이름이 string으로 담김
@@ -55,6 +65,7 @@ class Controller {
             header("Location: /board/list");
             exit;
         } 
+
     } 
 } 
 

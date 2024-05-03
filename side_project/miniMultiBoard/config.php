@@ -1,6 +1,7 @@
 <?php
 
-define("_ROOT", $_SERVER['DOCUMENT_ROOT']."/");
+define("_ROOT", $_SERVER['DOCUMENT_ROOT']);
+define("_PATH_IMG", "view/img/");
 
 // MariaDB 관련
 define("_MARIA_DB_HOST", "localhost");
