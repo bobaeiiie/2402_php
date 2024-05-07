@@ -14,6 +14,7 @@ class BoardsModel extends Model {
                 ."  boards "
                 ." WHERE "
                 ."  b_type = :b_type "
+                ."  AND deleted_at is null "
                 ." ORDER BY "
                 ."  b_id DESC "
                 ;
@@ -74,6 +75,7 @@ class BoardsModel extends Model {
             ."  boards"
             ." WHERE "
             ."  b_id = :b_id "
+            ."  AND deleted_at is null "
             ;
 
             $stmt = $this->conn->prepare($sql);
@@ -85,6 +87,28 @@ class BoardsModel extends Model {
         } catch (\Throwable $th) {
             echo "BoardsModel >> getBoard(), ".$th->getMessage();
             exit;
+        }
+    }
+
+    // 삭제 처리 
+    public function deleteBoard($paramArr) {
+        try {
+            $sql = 
+                " UPDATE boards "
+                ." SET "
+                ."  deleted_at = NOW() "
+                ." WHERE "
+                ." b_id = :b_id "
+                ." AND u_id = :u_id "
+            ;
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+
+            return $stmt->rowCount();
+
+        } catch (\Throwable $th) {
+            echo "BoardsModel >> deleteBoard(), ".$th->getMessage();
+            // 원래는 에이젝스로 작성시 예외 처리도 제이슨으로 해야함
         }
     }
 }

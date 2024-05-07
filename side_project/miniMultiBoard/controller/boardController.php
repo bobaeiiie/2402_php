@@ -90,7 +90,7 @@ class BoardController extends Controller {
         ];
 
         // 게시글 정보 조회
-        $modelBoards = new Boardsmodel();
+        $modelBoards = new boardsModel();
         $resultBoard = $modelBoards->getBoard($requestData);
 
         // 로그인 유저 pk 추가
@@ -102,6 +102,44 @@ class BoardController extends Controller {
         // response 처리
         header('Content-type: application/json');
         echo $response;
+        exit;
+
+    }
+
+    // 삭제 처리
+    protected function deletePost() {
+        $requestData = [
+            "b_id" => $_POST["b_id"]
+            ,"u_id" => $_SESSION["u_id"]
+        ];
+
+        // response 데이터 초기회
+        $arrResponse = [
+            "errorFlg" => false
+            ,"errorMsg" => ""
+            ,"b_id" => 0
+        ];
+        // 삭제 처리
+        $modelBoards = new Boardsmodel;
+        $modelBoards->beginTransaction(); // 갱신 처리를 위한 트랜잭션
+        $resultDelete = $modelBoards->deleteBoard($requestData);
+
+
+        if($resultDelete !== 1) {
+            // 예외처리
+            $arrResponse["errorFlg"] = true;
+            $arrResponse["errorMsg"] = "삭제 처리 이상";
+            $modelBoards->rollBack();
+            
+        } else {
+            // 정상처리
+            $arrResponse["b_id"] = $requestData["b_id"];
+            $modelBoards->commit();
+        }
+
+        // response 처리
+        header("Content-type: application/json");
+        echo json_encode($arrResponse);
         exit;
 
     }

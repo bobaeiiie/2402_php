@@ -6,6 +6,11 @@ use lib\UserValidator;
 
 class UserController extends Controller {
     
+    private $userInfo;
+    public function getUserInfo($key) {
+        return $this->userInfo[$key];
+    }
+
     // 로그인 페이지로 이동
     protected function loginGet() {
         return "login.php";
@@ -151,6 +156,58 @@ class UserController extends Controller {
         echo json_encode($reponseArr);
         exit;
     }
+
+    // 내 정보 수정 페이지로 이동
+    protected function userEditGet() {
+        $user_id = $_SESSION["u_id"];
+        // 사용자 정보를 조회하는 메소드를 호출하여 사용자 정보를 가져옵니다.
+        $modelUsers = new UsersModel();
+        $this->userInfo = $modelUsers->getUserInfo(["u_id" => $user_id]);
+
+        return "edit.php";
+    }
+
+    // 수정
+    protected function userEditPost()
+    {
+        // 사용자 정보를 조회하는 메소드를 호출하여 사용자 정보를 가져옵니다.
+        $modelUsers = new UsersModel();
+        $this->userInfo = $modelUsers->getUserInfo(["u_id" => $_SESSION["u_id"]]);
+        $requestData = [
+           "u_pw"   => $_POST["u_pw"]
+           ,"u_name" => $_POST["u_name"]
+           ,"u_pw_chk" => $_POST["u_pw_chk"]
+        ];
+        $requestData1 = [
+           "u_pw" => $_POST["u_pw"]
+           ,"u_name" => $_POST["u_name"]
+           ,"u_id" => $_SESSION["u_id"]
+        ];
+        // 유효성 체크
+        $resultValidator = UserValidator::chkValidator($requestData);
+        if (count($resultValidator) > 0) {
+            $this->arrErrorMsg = $resultValidator;
+            return "edit.php";
+        }
+
+        // 비밀번호 암호화
+        $requestData1["u_pw"] = $this->encryptionPassword($requestData1["u_pw"], $this->userInfo["u_email"]);
+
+        $modelUsers->beginTransaction();
+        $requestUser = $modelUsers->updatePost($requestData1);
+        if ($requestUser === 1) {
+            $modelUsers->commit();
+            return "Location: /board/list";
+        } else {
+            $modelUsers->rollBack();
+            $this->arrErrorMsg = ["회원 정보 수정에 실패하였습니다."];
+            return "edit.php";
+        }
+
+        
+    }
+
+    
 
 
     // 비밀번호 암호화

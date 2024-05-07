@@ -63,7 +63,65 @@ class UsersModel extends Model {
         }
     }
 
+    // 회원 정보 조회
+    public function getUserName() {
+        try {
+            $sql = 
+                " SELECT "
+                ."  u_name "
+                ." FROM "
+                ."  users "
+                ." WHERE "
+                ."  u_id = :u_id "
+            ;
+    
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+    
+            return $result;
+    
+        } catch (\Throwable $th) {
+            echo "UsersModel >> getUserName(), ".$th->getMessage();
+            exit;
+        }
+
+    }
+
+    public function updatePost($paramArr) {
+        try {
+            $sql = 
+                " UPDATE users "
+                ." SET "
+                ." u_name = :u_name "
+                ." ,u_pw = :u_pw "
+                ." WHERE "
+                ."  u_id = :u_id "
+            ;
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+
+            return $stmt->rowCount();
+
+        }
+        catch(\Throwable $th) {
+            echo "UserModel >> userEditPost(), ".$th->getMessage();
+        }
+    }
+
+    // // 회원 정보 표시
+    // public function userEditData($paramArr) {
+
+    // }
+
+    // public function getUserData() {
+
+    // }
+
 }
 
 // $obj = new UsersModel();
 // $obj->getUserInfo([]);
+
+

@@ -42,7 +42,7 @@
             <div class="card-body">
                 <h5 class="card-title"><?php echo $item["b_title"] ?></h5>
                 <p class="card-text"><?php echo $item["b_content"] ?></p>
-                <button href="#" class="btn btn-secondary my-btn-detail" data-bs-toggle="modal"
+                <button href="#" class="btn btn-primary my-btn-detail" data-bs-toggle="modal"
                     data-bs-target="#modal-detail" value="<?php echo $item["b_id"] ?>">상세</button>
             </div>
         </div>
