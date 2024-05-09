@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\EduController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,14 +120,41 @@ Route::get('/send', function() {
     ->with('data', $arr);
 });
 
+// -----------------------------
+// 라우터에 컨트롤러 연결
+// -----------------------------
+// 커맨드로 컨트롤러 생성 (php artisan make:controller 컨트롤러명)
+Route::get('/test/index', [TestController::class, 'index']);
+
+// TestController>>create() : get
+Route::get('/test/create', [TestController::class, 'create']);
+
+
+// 리소스 라우터
+use App\Http\Controllers\TaskController;
+Route::resource('task', TaskController::class);
+
+
+// -----------------------------
+// 블레이드 탬플릿 연습용
+// -----------------------------
+
+Route::get('/edu', [EduController::class, 'index']);
+
+// -----------------------------
+// DB관련 연습용
+// -----------------------------
+Route::get('/user', [UserController::class, 'eduUser']);
 
 
 
 
 
-// 존재하지 않는 router 정의
+
+
+
+// 존재하지 않는 라우터 정의
 // 가능하면 최하단에 배치. 버전에 따라 동작하지 않는 경우 있음 
 Route::fallBack(function() {
     return '없는 URL입니다.';
 });
-

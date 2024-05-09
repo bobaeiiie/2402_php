@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // 마이그레이션 파일 생성 : php artisan make:migration 파일명
+    // 마이그레이션 실행 : php artisan migrate
+    // 마이그레이션 롤백 : php artisan migrate:rollback (직전 작업 되돌리기)
+    // 마이그레이션 리셋 : php artisan migrate:reset (모든 작업 되돌리기)
     /**
      * Run the migrations.
      *
@@ -13,11 +17,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('boards', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('title', 50);
+            $table->string('content', 1000);
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at')->useCurrent();
             $table->dateTime('deleted_at')->nullable();
@@ -31,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('boards');
     }
 };
