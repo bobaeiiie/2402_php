@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BoardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ----------------------------
+// 유저 관련
+// ----------------------------
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('login');
+})->name('get.login');
+
+Route::post('/login', [UserController::class, 'login'])->name('post.login');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+
+// ----------------------------
+// 게시판 관련
+// ----------------------------
+Route::middleware('auth')->resource('/board', BoardController::class);
+

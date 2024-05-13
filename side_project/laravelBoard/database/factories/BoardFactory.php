@@ -20,11 +20,9 @@ class BoardFactory extends Factory
     public function definition()
     {
         $arrImg = [
-            '/public/img/cat1.png'
-            ,'/public/img/cat2.png'
-            ,'/public/img/cat3.png'
-            ,'/public/img/cat4.png'
-            ,'/public/img/cat5.png'
+            '/img/memo_1.png'
+            ,'/img/memo_2.png'
+            ,'/img/memo_3.png'
         ];
 
         return [

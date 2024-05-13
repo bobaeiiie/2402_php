@@ -1,0 +1,1 @@
+<footer class="fixed-bottom bg-primary text-center text-light p-3">저작권</footer>
