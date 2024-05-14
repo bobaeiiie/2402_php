@@ -24,14 +24,17 @@
                 @endforeach
             </div>
             @endif
-            <label for="email" class="form-label">아이디</label>
+            <label for="email" class="form-label">이메일</label>
             <input type="text" class="form-control" name="email" id="email">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">비밀번호</label>
             <input type="password" class="form-control" name="password" id="password">
         </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
+        <div>
+            <button type="submit" class="btn btn-primary">로그인</button>
+            <a href="{{ route('regist.index') }}" class="btn btn-secondary text-light float-end" role="button">회원가입</a>
+        </div>
     </form>
 </main>
 @endsection

@@ -4,6 +4,12 @@ use Illuminate\Support\Str;
 
 return [
 
+    // 'dbal' => [
+    //     'types' => [
+    //         'string' =>StringType::class,
+    //     ],
+    // ],
+
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -141,6 +147,7 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
+
 
     ],
 

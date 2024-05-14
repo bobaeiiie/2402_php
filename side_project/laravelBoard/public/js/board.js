@@ -19,7 +19,7 @@ const BTN_DETAIL = document.querySelectorAll('.my-btn-detail').forEach(item => {
             modalContent.textContent = data.content;
             modalImg.src = data.img;
 
-            // 삭제 버튼 셋팅
+            // 수정, 삭제 버튼 셋팅
             if(data.auth_id !== data.user_id) {
                 btnDelete.classList.add('d-none');
                 btnUpdate.classList.add('d-none');
@@ -69,3 +69,26 @@ const BTN_DETAIL = document.querySelectorAll('.my-btn-detail').forEach(item => {
 // }
 
 
+// 삭제처리
+document.querySelector('#my-btn-delete').addEventListener('click', MyDeleteCard);
+
+function MyDeleteCard(e) {
+    const url = '/board/' + e.target.value; // url
+    // localhost/board/5
+    
+    // Ajax 처리
+    axios.delete(url)
+    .then(response => {
+        if(response.data.errorFlg) {
+            // 삭제 이상 발생
+            alert('삭제에 실패 했습니다.');
+        }
+        else {
+            // 정상 처리
+            const main = document.querySelector('main');
+            const card = document.querySelector('#card' + response.data.deletedId);
+            main.removeChild(card);
+        }
+    })
+    .catch(error);
+}

@@ -16,8 +16,9 @@
                                 게시판
                             </a>
                             <ul class="dropdown-menu dropdown-menu-primary text-light">
-                                <li><a class="dropdown-item text-dark" href="./free.html">자유게시판</a></li>
-                                <li><a class="dropdown-item text-dark" href="./question.html">질문게시판</a></li>
+                                @foreach($globalBoardNameInfo as $item)
+                                <li><a class="dropdown-item text-dark" href="{{ route('board.index').'?type='.$item->type }} ">{{ $item->name }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>
@@ -25,9 +26,8 @@
                 </div>
             @endauth
             @guest
-            <a href="{{ route('logout') }}" class="navbar-nav nav-link text-light" role="button">회원가입</a>
+            <a href="{{ route('regist.index') }}" class="navbar-nav nav-link text-light" role="button">회원가입</a>
             @endguest
-
         </div>
     </nav>
 </header>
