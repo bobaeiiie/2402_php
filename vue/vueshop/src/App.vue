@@ -6,12 +6,19 @@
   </div> -->
   
   <!-- 상품 리스트 -->
+  <ProductList
+    :products="products"
+    :product="product"
+    @myOpenModal="myOpenModal"
+  >
+  <!-- <h3>부모쪽에서 정의한 슬롯</h3> -->
+  </ProductList>
   <div>
-    <div v-for="item in products" :key="item.productName">
+    <!-- <div v-for="item in products" :key="item.productName">
       <h4 @click="myOpenModal(item)">{{ item.productName }}</h4>
       <p>{{ item.price }} 원</p>
       <hr>
-    </div>
+    </div> -->
     <!-- <div>
       <h4 @click="myOpenModal(products[1])">{{ products[1].productName }}</h4>
       <p>{{ products[1].price }} 원</p>
@@ -23,7 +30,12 @@
   </div>
 
   <!-- 모달 -->
-  <ModalDetail :products="products" :product="product" :flgModal="flgModal" />
+  <ModalDetail
+    :products="products"
+    :product="product"
+    :flgModal="flgModal" 
+    @myCloseModal="myCloseModal"
+  />
   <!-- <div class="bg_black" v-if="flgModal">
     <div class="bg_white">
       <img :src="product.img">
@@ -38,9 +50,10 @@
 <!-- -------------------------------------------------------------------------- -->
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, provide } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import ModalDetail from './components/ModalDetail.vue';
+import ProductList from './components/ProductList.vue';
 // ----------------
 // 데이터 바인딩
 // ----------------
@@ -59,6 +72,7 @@ const products = reactive([
   {productName: '양말', price: 1000, productContent: '매우 아름다운 양말입니다.', img: require('@/assets/img/3.jpg')},
 ]);
 
+// 헤더
 const navList = reactive([
   {navName: 'Home'},
   {navName: '상품'},
@@ -74,9 +88,28 @@ const navList = reactive([
 const flgModal = ref(false);
 let product = reactive({});
 function myOpenModal(item) {
-  flgModal.value = !flgModal.value;
+  flgModal.value = true;
   product = item;
 }
+
+function myCloseModal(str) {
+  flgModal.value = false;
+  console.log(str); // 파라미터 연습용
+}
+
+// ----------------
+// Provide / Inject 연습
+// ----------------
+const count = ref(0);
+
+function addCount() {
+  count.value++;
+}
+
+provide('test', {
+  count
+  ,addCount
+}); // 구분 없이 전달할 객체 작성
 
 </script>
 
