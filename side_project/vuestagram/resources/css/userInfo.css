@@ -1,0 +1,19 @@
+.user-info-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-info-box img {
+    width: 70px;
+    margin: 0 10px;
+}
+
+.user-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.user-info-box button {
+    width: 100px;
+}

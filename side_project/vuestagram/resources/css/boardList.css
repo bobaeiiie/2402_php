@@ -1,0 +1,43 @@
+/* BoardList */
+.board-list-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 5px;
+}
+.board-list-box > .item {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    min-width: 100px;
+    min-height: 150px;
+}
+.board-list-box > .item > img {
+    width: 100%;
+}
+
+/* BoardDetail */
+.board-detail-box {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+}
+.board-detail-box > .item {
+    width: 70vw;
+    max-width: 700px;
+    background-color: #fff;
+    padding: 10px;
+}
+.board-detail-box > .item > img {
+    width: 100%;
+}
+.board-detail-box > .item > .etc-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
