@@ -16,7 +16,9 @@ body {
 }
 
 hr {
-    margin: 10px 0;
+    margin: 15px 0;
+    border-top: 1.5px solid rgb(239, 239, 239);
+
 }
 
 h1 {
@@ -60,12 +62,17 @@ a:hover {
     width: 60px;
 }
 .btn-bg-black {
-    color: #fff;
-    background-color: #000;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    width: 80px;
+    height: 40px;
 }
 .btn-bg-white {
     color: #000;
-    background-color: #fff;
+    background-color: rgb(239, 239, 239);
+    width: 80px;
+    height: 40px;
+    
 }
 
 /* Form */
@@ -138,8 +145,8 @@ header {
 }
 
 .img-logo {
-    width: 68px;
-    height: 60px;
+    width: 78px;
+    height: 70px;
 }
 
 /* main */

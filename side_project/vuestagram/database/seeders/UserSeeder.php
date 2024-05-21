@@ -17,11 +17,11 @@ class UserSeeder extends Seeder
     public function run()
     {
         $data = [
-            'account' => 'admin'
+            'account' => 'bobae'
             ,'password' => Hash::make('admin')
-            ,'name' => '관리자'
+            ,'name' => '보배'
             ,'gender' => '0'
-            ,'profile' => '/profile/default/png'
+            ,'profile' => '/profile/default.jpg'
         ];
         User::create($data);
     }

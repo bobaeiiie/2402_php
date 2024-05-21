@@ -25,4 +25,9 @@ class Board extends Model
      {
          return $date->format('Y-m-d H:i:s');
      }
+
+    public function users() {
+        return $this->belongsTo(User::class);
+    }
+
 }
