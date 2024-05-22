@@ -19,7 +19,7 @@
                         </router-link>
                     </div>
                     <div v-else>
-                        <button class="btn btn-header btn-bg-black">로그아웃</button>
+                        <button @click="$store.dispatch('logout')" class="btn btn-header btn-bg-black">로그아웃</button>
                     </div>
                 </div>
             </div>

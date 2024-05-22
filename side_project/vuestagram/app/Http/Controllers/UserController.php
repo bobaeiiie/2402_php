@@ -62,5 +62,30 @@ class UserController extends Controller
         ];
         
         return response()->json($responseData, 200);
+
+    }
+
+    /**
+     * 로그아웃
+     * 
+     * @param Illuminate\Http\Request $request
+     * 
+     * @return response()
+     */
+
+    public function logout(Request $request) {
+        $id = MyToken::getValueInPayload($request->bearerToken(), 'idt');
+
+        $userInfo = User::find($id);
+
+        MyToken::removeRefreshToken($userInfo);
+
+        $responseData = [
+            'code' => '0'
+            ,'msg' => ''
+            ,'data' => $userInfo
+        ];
+
+        return response()->json($responseData, 200);
     }
 }

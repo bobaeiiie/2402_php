@@ -82,8 +82,9 @@ class Handler extends ExceptionHandler
      */
     public function context() {
         return [
-            'E80' => ['status' => 500, 'msg' => 'DB 에러'],
-            'E99' => ['status' => 500, 'msg' => '시스템 에러'],
+            'E80' => ['status' => 500, 'msg' => 'DB에러가 발생했습니다.'],
+            'E90' => ['status' => 500, 'msg' => '요청하신 서비스는 없는 서비스입니다.'],
+            'E99' => ['status' => 500, 'msg' => '시스템 에러가 발생했습니다.'],
         ];
     }
 }
