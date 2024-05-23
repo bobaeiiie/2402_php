@@ -9,6 +9,7 @@ body {
     max-width: 800px;
     margin: auto;
     -ms-overflow-style: none;
+    color: rgb(79, 79, 79);
 }
 
 ::-webkit-scrollbar {
@@ -17,7 +18,7 @@ body {
 
 hr {
     margin: 15px 0;
-    border-top: 1.5px solid rgb(239, 239, 239);
+    border-top: 1.5px solid rgb(229, 229, 229);
 
 }
 
@@ -63,13 +64,13 @@ a:hover {
 }
 .btn-bg-black {
     color: #ffffff;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(66, 66, 66);
     width: 80px;
     height: 40px;
 }
 .btn-bg-white {
     color: #000;
-    background-color: rgb(239, 239, 239);
+    background-color: rgb(231, 231, 231);
     width: 80px;
     height: 40px;
 }
@@ -81,9 +82,11 @@ a:hover {
     gap: 10px;
     place-items: center;
     margin: 20px auto;
-    width: 300px;
+    width: 400px;
     border: 1px solid #c5c5c5;
     padding: 0 20px 20px;
+    border: 2.5px solid rgb(229, 229, 229);
+    border-radius: 25px;
 }
 .form-box > * {
     width: 80%;

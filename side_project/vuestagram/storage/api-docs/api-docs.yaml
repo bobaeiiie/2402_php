@@ -1,0 +1,899 @@
+openapi: 3.0.0
+info:
+  title: vuestagram
+  version: '1.0'
+  description: |
+    <h2>에러 목록</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Code</th>
+          <th>Message</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>400</td>
+          <td>E01</td>
+          <td>입력 데이터가 형식에 맞지 않습니다.</td>
+          <td>(유효성 체크 에러)</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>E02</td>
+          <td>사용할 수 없는 아이디입니다.</td>
+          <td>(유효성 체크 에러)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E20</td>
+          <td>해당 회원 정보가 없습니다.</td>
+          <td>(회원 정보 없음)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E21</td>
+          <td>비밀번호를 다시 확인해 주세요.</td>
+          <td>(비밀번호 불일치)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E22</td>
+          <td>토큰이 없습니다.</td>
+          <td>(Request에 토큰이 없음)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E23</td>
+          <td>사용 불가능한 토큰입니다.</td>
+          <td>(토큰의 서명 불일치)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E24</td>
+          <td>토큰의 정보에 오류가 있습니다.</td>
+          <td>(페이로드의 분석 실패 및 정보 없음)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E25</td>
+          <td>유효한 토큰이 아닙니다.</td>
+          <td>(토큰 구조 이상)</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>E26</td>
+          <td>만료된 토큰입니다.</td>
+          <td>(토큰의 유효기간 만료)</td>
+        </tr>
+        <tr>
+          <td>500</td>
+          <td>E80</td>
+          <td>DB에러가 발생했습니다.</td>
+          <td>(DB 관련 오류)</td>
+        </tr>
+        <tr>
+          <td>404</td>
+          <td>E90</td>
+          <td>요청하신 서비스는 없는 서비스입니다.</td>
+          <td>(설정하지 않은 Path로 접속)</td>
+        </tr>
+        <tr>
+          <td>500</td>
+          <td>E99</td>
+          <td>시스템 에러가 발생했습니다.</td>
+          <td>(기타 설정하지 않은 오류)</td>
+        </tr>
+      </table>
+    </tbody>
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "예) abcde12345"
+paths:
+##### 인증 관련 #####
+  /api/login:
+    post:
+      tags:
+        - Auth 관련
+      summary: 로그인
+      description: 회원의 로그인 처리후 JWT 및 회원정보 반환
+      operationId: '1'
+      requestBody:
+        description: 회원 로그인 정보
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account:
+                  description: 회원 아이디 (최대 20 글자)
+                  type: string
+                  example: admin
+                password:
+                  description: 비밀번호 (최대 20 글자)
+                  type: string
+                  example: admin
+      responses:
+        '200':
+          description: 로그인 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  accessToken:
+                    type: string
+                    example: "hbGciOiJzaLCJ0eXAiOm51bGx9.eyJpZHQiOjEsIm..."
+                    description: 엑세스 토큰
+                  refreshToken:
+                    type: string
+                    example: "hbGciOiJzaLCJ0eXAiOm51bGx9.eyJpZHQiOjEsIm..."
+                    description: 리프래시 토큰
+                  data:
+                    description: "로그인 처리 된 회원정보"
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                        description: "회원 PK"
+                      account:
+                        type: string
+                        example: "admin"
+                        description: "아이디"
+                      name:
+                        type: string
+                        example: "관리자"
+                        description: "이름"
+                      gender:
+                        type: string
+                        example: "여자"
+                        description: "성별"
+                      profile:
+                        type: string
+                        example: "/profile/default.png"
+                        description: "프로필 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                      created_at:
+                        description: 가입일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-20 15:02:52"
+                      updated_at:
+                        description: 수정일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-21 18:26:28"
+                      deleted_at:
+                        description: 탈퇴일자
+                        type: string
+                        format: date-time
+                        nullable: true
+                        example: "null || 2024-05-21 18:26:28"
+                      boards_count:
+                        type: integer
+                        example: 35
+                        description: "해당 유저가 작성한 게시글 수"
+        '400':
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    description: "발생 에러코드 목록 : E01, E02"
+                    type: string
+                    example: "E01"
+                  msg:
+                    description: "에러메세지는 에러목록 참조"
+                    type: string
+                    example: "입력 데이터가 형식에 맞지 않습니다."
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    description: "발생 에러코드 목록 : E20, E21, E22, E23, E25, E26"
+                    type: string
+                    example: "E20"
+                  msg:
+                    description: "에러메세지는 에러목록 참조"
+                    type: string
+                    example: "해당 회원 정보가 없습니다."
+  /api/logout:
+    post:
+      tags:
+        - Auth 관련
+      summary: 로그아웃
+      description: 회원 로그아웃 처리
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 로그아웃 완료
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  data:
+                    description: "로그아웃 처리 된 회원정보"
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                        description: "회원 PK"
+                      account:
+                        type: string
+                        example: "admin"
+                        description: "아이디"
+                      name:
+                        type: string
+                        example: "관리자"
+                        description: "이름"
+                      gender:
+                        type: string
+                        example: "여자"
+                        description: "성별"
+                      profile:
+                        type: string
+                        example: "/profile/default.png"
+                        description: "프로필 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                      created_at:
+                        description: 가입일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-20 15:02:52"
+                      updated_at:
+                        description: 수정일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-21 18:26:28"
+                      deleted_at:
+                        description: 탈퇴일자
+                        type: string
+                        format: date-time
+                        nullable: true
+                        example: "null || 2024-05-21 18:26:28"
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E26"
+                    description: "발생 에러코드 목록 : E22, E23, E24, E25, E26"
+                  msg:
+                    type: string
+                    example: "만료된 엑세스 토큰입니다."
+                    description: "에러메세지는 에러목록 참조"
+        '500':
+          description: 서버 예외 및 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E99"
+                    description: "발생 에러코드 목록 : E80, E99"
+                  msg:
+                    type: string
+                    example: "시스템 에러가 발생했습니다."
+                    description: "에러메세지는 에러목록 참조"
+  /api/registration:
+    post:
+      tags:
+        - Auth 관련
+      summary: 회원가입
+      description: 회원가입 처리
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                  example: admin
+                  description: "아이디 (최대 20 글자, 영어대소문자 및 숫자만 허용)"
+                password:
+                  type: string
+                  example: admin
+                  description: "비밀번호 (최대 20 글자, 영어 대소문자 및 숫자, 특수기호(!@)만 허용)"
+                password_chk:
+                  type: string
+                  example: admin
+                  description: "비밀번호 확인 (최대 20 글자, 영어 대소문자 및 숫자, 특수기호(!@)만 허용"
+                name:
+                  type: string
+                  example: 홍길동
+                  description: "이름 (최대 20 글자, 한글만 허용)"
+                gender:
+                  type: string
+                  example: 0
+                  description: "성별 (0: 남자, 1: 여자, 0과 1만 허용)"
+                img:
+                  type: string
+                  example: "/img/DEY7e6vlrZXL51AiBjK7WfJS0KWXExqSqgX01xV0.webp"
+                  description: "게시글 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+              required:
+                - account
+                - password
+                - password_chk
+                - name
+                - gender
+                - img
+      responses:
+        '200':
+          description: 회원가입 완료
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  data:
+                    description: "회원가입 처리 된 회원정보"
+                    type: object
+                    properties:
+                      id:
+                        description: "회원 PK (빅인트, 숫자)"
+                        type: integer
+                        example: 1
+                      account:
+                        type: string
+                        example: admin
+                        description: "아이디 (최대 20 글자, 영어대소문자 및 숫자만 허용)"
+                      name:
+                        type: string
+                        example: 홍길동
+                        description: "이름 (최대 20 글자, 한글만 허용)"
+                      gender:
+                        type: string
+                        example: 0
+                        description: "성별 (0: 남자, 1: 여자, 0과 1만 허용)"
+                      profile:
+                        type: string
+                        example: "/profile/default.png"
+                        description: "프로필 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                      created_at:
+                        description: 가입일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-20 15:02:52"
+                      updated_at:
+                        description: 수정일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-21 18:26:28"
+                      deleted_at:
+                        description: 탈퇴일자
+                        type: string
+                        format: date-time
+                        nullable: true
+                        example: "null || 2024-05-21 18:26:28"
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E01"
+                    description: "발생 에러코드 목록 : E01, E02"
+                  msg:
+                    type: string
+                    example: "입력 데이터가 형식에 맞지 않습니다."
+                    description: "에러메세지는 에러목록 참조"
+        '500':
+          description: 서버 예외 및 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E99"
+                    description: "발생 에러코드 목록 : E80, E99"
+                  msg:
+                    type: string
+                    example: "시스템 에러가 발생했습니다."
+                    description: "에러메세지는 에러목록 참조"
+  /api/reissue:
+    put:
+      tags:
+        - Auth 관련
+      summary: 토큰 재발급
+      description: 엑세스 토큰과 리플래시 토큰 모두 재발급
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 토큰 재발급 완료
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        description: "회원 PK (빅인트, 숫자)"
+                        type: integer
+                        example: 1
+                      account:
+                        type: string
+                        example: admin
+                        description: "아이디 (최대 20 글자, 영어대소문자 및 숫자만 허용)"
+                      name:
+                        type: string
+                        example: 홍길동
+                        description: "이름 (최대 20 글자, 한글만 허용)"
+                      gender:
+                        type: string
+                        example: 0
+                        description: "성별 (0: 남자, 1: 여자, 0과 1만 허용)"
+                      profile:
+                        type: string
+                        example: "/profile/default.png"
+                        description: "프로필 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                      created_at:
+                        description: 가입일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-20 15:02:52"
+                      updated_at:
+                        description: 수정일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-21 18:26:28"
+                      deleted_at:
+                        description: 탈퇴일자
+                        type: string
+                        format: date-time
+                        nullable: true
+                        example: "null || 2024-05-21 18:26:28"
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E26"
+                    description: "발생 에러코드 목록 : E22, E23, E24, E25, E26"
+                  msg:
+                    type: string
+                    example: "만료된 엑세스 토큰입니다."
+                    description: "에러메세지는 에러목록 참조"
+        '500':
+          description: 서버 예외 및 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E99"
+                    description: "발생 에러코드 목록 : E80, E99"
+                  msg:
+                    type: string
+                    example: "시스템 에러가 발생했습니다."
+                    description: "에러메세지는 에러목록 참조"
+##### 게시판 관련 #####
+  #초기 게시글 획득
+  /api/board/{id}/list:
+    get:
+      tags:
+        - Board 관련
+      summary: 게시글 리스트 획득
+      description: "초기일 경우 {id}는 0이며 최신 게시글 20개를 획득, 그 이후의 {id}는 가장 마지막 게시글의 PK이며 해당 id보다 작은 게시글 획득 "
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 게시글 정보 획득 완료
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  data:
+                    description: "게시글 정보"
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                          description: "게시글 PK"
+                        user_id:
+                          type: integer
+                          example: 1
+                          description: "회원 PK"
+                        content:
+                          type: string
+                          example: "내용입니다."
+                          description: "게시글 내용"
+                        img:
+                          type: string
+                          example: "/img/DEY7e6vlrZXL51AiBjK7WfJS0KWXExqSqgX01xV0.webp"
+                          description: "게시글 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                        like:
+                          type: integer
+                          example: "256"
+                          description: "추천 수"
+                        created_at:
+                          type: string
+                          example: "2024-05-20 15:02:52"
+                          description: 작성일자
+                          format: date-time
+                        updated_at:
+                          description: 수정일자
+                          type: string
+                          format: date-time
+                          example: "2024-05-21 18:26:28"
+                        deleted_at:
+                          description: 삭제일자
+                          type: string
+                          nullable: true
+                          example: null
+                        name:
+                          type: string
+                          example: "관리자"
+                          description: "작성자 이름"
+        '400':
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: E01
+                    description: "발생 에러코드 목록 : E01"
+                  msg:
+                    type: string
+                    example: 리퀘스트 데이터 이상
+                    description: "에러메세지는 에러목록 참조"
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E26"
+                    description: "발생 에러코드 목록 : E22, E23, E24, E25, E26"
+                  msg:
+                    type: string
+                    example: "만료된 엑세스 토큰입니다."
+                    description: "에러메세지는 에러목록 참조"
+        '500':
+          description: 서버 예외 및 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E99"
+                    description: "발생 에러코드 목록 : E80, E99"
+                  msg:
+                    type: string
+                    example: "시스템 에러가 발생했습니다."
+                    description: "에러메세지는 에러목록 참조"
+  #추가 게시글 획득
+  /api/board/{id}:
+    get:
+      tags:
+        - Board 관련
+      summary: 추가 게시글 리스트 획득
+      description: "{id}보다 작은 20개의 게시글 획득 "
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 게시글 정보 획득 완료
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  data:
+                    description: "게시글 정보"
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                          description: "게시글 PK"
+                        user_id:
+                          type: integer
+                          example: 1
+                          description: "회원 PK"
+                        content:
+                          type: string
+                          example: "내용입니다."
+                          description: "게시글 내용"
+                        img:
+                          type: string
+                          example: "/img/DEY7e6vlrZXL51AiBjK7WfJS0KWXExqSqgX01xV0.webp"
+                          description: "게시글 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                        like:
+                          type: integer
+                          example: "256"
+                          description: "추천 수"
+                        created_at:
+                          type: string
+                          example: "2024-05-20 15:02:52"
+                          description: 작성일자
+                          format: date-time
+                        updated_at:
+                          description: 수정일자
+                          type: string
+                          format: date-time
+                          example: "2024-05-21 18:26:28"
+                        deleted_at:
+                          description: 삭제일자
+                          type: string
+                          nullable: true
+                          example: null
+                        name:
+                          type: string
+                          example: "관리자"
+                          description: "작성자 이름"
+        '400':
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: E01
+                    description: "발생 에러코드 목록 : E01"
+                  msg:
+                    type: string
+                    example: 리퀘스트 데이터 이상
+                    description: "에러메세지는 에러목록 참조"
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E26"
+                    description: "발생 에러코드 목록 : E22, E23, E24, E25, E26"
+                  msg:
+                    type: string
+                    example: "만료된 엑세스 토큰입니다."
+                    description: "에러메세지는 에러목록 참조"
+        '500':
+          description: 서버 예외 및 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E99"
+                    description: "발생 에러코드 목록 : E80, E99"
+                  msg:
+                    type: string
+                    example: "시스템 에러가 발생했습니다."
+                    description: "에러메세지는 에러목록 참조"
+  # 글작성
+  /api/board:
+    post:
+      tags:
+        - Board 관련
+      summary: 게시글 작성 페이지
+      description: 새로운 게시글을 작성
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                img:
+                  type: string
+                  example: "/img/DEY7e6vlrZXL51AiBjK7WfJS0KWXExqSqgX01xV0.webp"
+                  description: 이미지 파일 (최대 100 글자)
+                content:
+                  type: string
+                  example: "안녕하세요. 내용입니다."
+                  description: 게시글 내용 (최대 200 글자)
+              required:
+                - img
+                - content
+      responses:
+        '200':
+          description: 게시글 작성 완료
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "0"
+                    description: "정상 처리 코드"
+                  msg:
+                    type: string
+                    example: ""
+                    description: "정상 처리 메시지"
+                  data:
+                    description: "게시글 정보"
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                        description: "게시글 PK"
+                      user_id:
+                        type: integer
+                        example: 1
+                        description: "회원 PK"
+                      content:
+                        type: string
+                        example: "내용입니다."
+                        description: "게시글 내용"
+                      img:
+                        type: string
+                        example: "/img/DEY7e6vlrZXL51AiBjK7WfJS0KWXExqSqgX01xV0.webp"
+                        description: "게시글 이미지 (jpeg, png, bmp, gif, svg, webp만 허용)"
+                      like:
+                        type: integer
+                        example: "256"
+                        description: "추천 수"
+                      created_at:
+                        type: string
+                        example: "2024-05-20 15:02:52"
+                        description: 작성일자
+                        format: date-time
+                      updated_at:
+                        description: 수정일자
+                        type: string
+                        format: date-time
+                        example: "2024-05-21 18:26:28"
+                      deleted_at:
+                        description: 삭제일자
+                        type: string
+                        nullable: true
+                        example: null
+                      name:
+                        type: string
+                        example: "관리자"
+                        description: "작성자 이름"
+        '400':
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: E01
+                    description: "발생 에러코드 목록 : E01"
+                  msg:
+                    type: string
+                    example: 리퀘스트 데이터 이상
+                    description: "에러메세지는 에러목록 참조"
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E26"
+                    description: "발생 에러코드 목록 : E22, E23, E24, E25, E26"
+                  msg:
+                    type: string
+                    example: "만료된 엑세스 토큰입니다."
+                    description: "에러메세지는 에러목록 참조"
+        '500':
+          description: 서버 예외 및 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "E99"
+                    description: "발생 에러코드 목록 : E80, E99"
+                  msg:
+                    type: string
+                    example: "시스템 에러가 발생했습니다."
+                    description: "에러메세지는 에러목록 참조"

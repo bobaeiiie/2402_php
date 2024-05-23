@@ -4,7 +4,7 @@
         <div class="header-container">
             <div class="header-content">
                 <div class="title">
-                    <router-link to="/">
+                    <router-link to="/board">
                         <h1>Vuestagram</h1>
                     </router-link>
                 </div>

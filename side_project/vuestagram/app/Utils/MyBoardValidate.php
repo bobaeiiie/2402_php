@@ -7,7 +7,7 @@ class MyBoardValidate extends MyValidate {
     protected $validateList = [
         'id' => ['regex:/^[0-9]+$/']
         ,'content' => ['required', 'max:200']
-        ,'profile' => ['image']
+        ,'img' => ['image']
         
     ];
 }
