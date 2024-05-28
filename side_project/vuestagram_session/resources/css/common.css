@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px 10px;
+    max-width: 800px;
+    margin: auto;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+/* a Tag */
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    font-weight: 900;
+}
+
+/* Button */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    border-radius: 15px;
+    font-size: 1rem;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+.btn:hover {
+    font-weight: 900;
+}
+.btn-header {
+    width: 80px;
+}
+.btn-close {
+    width: 60px;
+}
+.btn-bg-black {
+    color: #fff;
+    background-color: #000;
+}
+.btn-bg-white {
+    color: #000;
+    background-color: #fff;
+}
+.btn-more{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 2rem;
+}
+
+/* Form */
+.form-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    place-items: center;
+    margin: 20px auto;
+    width: 300px;
+    border: 1px solid #c5c5c5;
+    padding: 0 20px 20px;
+}
+.form-box > * {
+    width: 80%;
+    margin: 5px;
+}
+.form-box > input:not([type="file"]) {
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+    padding: 0 10px;
+}
+.form-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 20px;
+    text-align: center;
+}
+textarea {
+    width: 100%;
+    height: 160px;
+    border: none;
+    resize: none;
+    padding: 5px;
+}
+textarea:focus {
+    outline: none;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+}
+.radio-box {
+    display: flex;
+    justify-content: space-around;
+}
+.radio-box label {
+    margin-right: 5px;
+}
+
+/* Header */
+header {
+    padding: 0 20px;
+}
+.title {
+    display: flex;
+    align-items: center;
+}
+.eader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px 20px;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* main */
+/* .container {
+    display: flex;
+    justify-content: center;
+} */
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
