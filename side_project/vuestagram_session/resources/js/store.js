@@ -5,7 +5,7 @@ const store = createStore({
     state() {
         return {
             authFlg: document.cookie.indexOf('auth=') >= 0 ? true : false,
-            userInfo: localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : '',
+            userInfo: localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null,
             boardData: [],
             moreBoardFlg: true,
         }
@@ -35,6 +35,17 @@ const store = createStore({
         setMoreBoardData(state, data) {
             state.boardData = [...state.boardData, ...data];
         },
+
+        // 작성 게시글 최상단에 추가
+        setUnshiftBoardList(state, data) {
+            state.boardData.unshift(data);
+        },
+
+        // 유저 작성글 수 + 1
+        setAddUserBoardsCount(state, data) {
+            state.userInfo.boards_count++;
+            localStorage.setItem('userInfo', state.userInfo);
+        }
     },
     actions: {
         /**
@@ -130,7 +141,55 @@ const store = createStore({
                 alert(`추가 게시글 획득 실패 (${error.response.data.code})`)
             })
         },
+
+        /**
+         * 회원 가입
+         * @param {*} context 
+         */
+        registration(context) {
+            const url = '/api/registration';
+            const data = new FormData(document.querySelector('#registrationForm'));
+
+            // 서버에 요청
+            axios.post(url, data)
+            .then(response => {
+                console.log(response.data); // TODO
+                router.replace('/login');
+            })
+            .catch(error => {
+                console.log(error.response.data);  // TODO
+                alert(`회원 가입 실패 (${error.response.data.code})`)
+            });
+        },
+
+        /**
+         * 게시글 작성
+         * @param {*} context 
+         * @param {object} boardInfo 
+         */
+        storeBoard(context, boardInfo) {
+            const url = '/api/board';
+
+            // ajax 처리
+            const data = new FormData(document.querySelector('#boardCreateForm'));
+
+            // axios 처리
+            axios.post(url, data)
+            .then(response => {
+                context.commit('setUnshiftBoardList', response.data.data);
+
+                // 유저 작성 게시글수 증가
+                localStorage.setItem('setAddUserBoardsCount', JSON.stringify(context.state.userInfo));
+                router.replace('/board');
+            })
+            .catch(error => {
+                console.log(error.response.data + '  : error + response'); // TODO
+                alert(`게시글 작성 실패 (${error.response.data.code})`);
+            })
+        },
+
     }
+    
 });
 
 export default store;

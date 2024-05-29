@@ -8,16 +8,16 @@
       <div class="radio-box">
         <div>
           <label for="male">남자</label>
-          <input type="radio" name="name" id="male" value="0">
+          <input type="radio" name="gender" id="male" value="0">
         </div>
         <div>
           <label for="female">여자</label>
-          <input type="radio" name="name" id="female" value="1">
+          <input type="radio" name="gender" id="female" value="1">
         </div>
       </div>
-      <input @change="setFile" type="file" name="img" accept="image/*">
+      <input @change="setFile" type="file" name="profile" accept="image/*">
       <hr>
-      <button @click="$router.replace('/login')" type="button" class="btn btn-submit btn-bg-black">가입</button>
+      <button @click="$store.dispatch('registration')" type="button" class="btn btn-submit btn-bg-black">가입</button>
       <button @click="$router.back()" type="button" class="btn btn-submit">취소</button>
     </form>
   </template>
