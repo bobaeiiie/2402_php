@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    /* margin-top: 5px; */
+    width: 900px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+}
+
+.header-content {
+    margin-top: 15px;
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: space-between;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 10px;
+    line-height: 40px;
+}
+
+.title {
+    line-height: 90px;
+    margin-left: 30px;
+}
+
+.title > a {
+    text-decoration: none;
+    color: grey;
+}
+
+.btn-container {
+    margin-right: 30px;
+}
+
+button {
+    margin: 5px;
+    width: 65px;
+    height: 25px;
+    background-color: rgb(224, 224, 224);
+    color: grey;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.main-container {
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.side-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.user-container{
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 10px;
+}
+
+.user-profile {
+    margin: 10px;
+    width: 180px;
+    height: 180px;
+    justify-content: center;
+}
+
+hr {
+    border: 1px solid rgb(224, 224, 224);
+    margin: 10px;
+}
+
+.user-etc {
+    margin: 5px;
+}
+
+.board-list-container {
+    margin-top: 5px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 10px;
+}
+
+.board-container {
+    margin-left: 5px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 10px;
+}
+
+.board-info {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-container {
+    margin-top: 5px;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 100px;
+    color: grey;
+}
+
