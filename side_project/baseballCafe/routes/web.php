@@ -15,15 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/{any}', function() {
     return view('welcome');
 })->where('any', '^(?!api).*$');
 
+Route::get('/', function () {
+    return redirect('/login');
+});
+
 Route::post('/api/login', [UserController::class, 'login']);
-Route::post('/api/registration', [UserController::class, 'registration']);
-Route::middleware('auth')->post('/api/logout', [UserController::class, 'logout']);
+// Route::post('/api/registration', [UserController::class, 'registration']);
+// Route::middleware('auth')->post('/api/logout', [UserController::class, 'logout']);
 
 // 게시글 관련
-Route::middleware('auth')->get('/api/board', [BoardController::class, 'index']);
-Route::middleware('auth')->get('/api/board/{id}', [BoardController::class, 'moreIndex']);
-Route::middleware('auth')->post('/api/board', [BoardController::class, 'store']);
+// Route::middleware('auth')->get('/api/board', [BoardController::class, 'index']);
+// Route::middleware('auth')->get('/api/board/{id}', [BoardController::class, 'moreIndex']);
+// Route::middleware('auth')->post('/api/board', [BoardController::class, 'store']);

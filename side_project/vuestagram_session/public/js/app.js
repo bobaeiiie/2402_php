@@ -12041,7 +12041,7 @@ function createAppContext() {
   };
 }
 let uid$1 = 0;
-function API(render, hydrate) {
+function createAppAPI(render, hydrate) {
   return function createApp(rootComponent, rootProps = null) {
     if (!(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(rootComponent)) {
       rootComponent = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.extend)({}, rootComponent);
@@ -20961,7 +20961,6 @@ __webpack_require__.r(__webpack_exports__);
         store.dispatch('getBoardData');
       }
     });
-    function deleteDetail() {}
     var __returned__ = {
       store: store,
       get detailItem() {
@@ -20978,7 +20977,6 @@ __webpack_require__.r(__webpack_exports__);
       },
       openDetail: openDetail,
       closeDetail: closeDetail,
-      deleteDetail: deleteDetail,
       onBeforeMount: vue__WEBPACK_IMPORTED_MODULE_0__.onBeforeMount,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
@@ -21152,7 +21150,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     src: $setup.detailItem.img
   }, null, 8 /* PROPS */, _hoisted_3), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.detailItem.content), 1 /* TEXT */), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "작성자 : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.detailItem.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button @click=\"detailFlg = false\" class=\"btn btn-bg-black btn-close\">닫기</button> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 리소스 관리를 위해 빈객체로 바꿔주기 위해 새 함수 생성 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $setup.deleteDetail();
+      return _ctx.$store.dispatch('delete', $setup.detailItem.id);
     }),
     "class": "btn btn-close"
   }, "삭제"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -21684,6 +21682,20 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.createStore)({
       })["catch"](function (error) {
         console.log(error.response.data + '  : error + response'); // TODO
         alert("\uAC8C\uC2DC\uAE00 \uC791\uC131 \uC2E4\uD328 (".concat(error.response.data.code, ")"));
+      });
+    },
+    /**
+     * 게시글 삭제
+     * @param {*} context
+     */
+    "delete": function _delete(context, boardId) {
+      var url = '/api/board/' + boardId;
+      axios["delete"](url).then(function (response) {
+        console.log(response.data, '삭제 완료');
+        // context.commit('closeModal');
+        _router__WEBPACK_IMPORTED_MODULE_0__["default"].replace('/board');
+      })["catch"](function (error) {
+        console.log(error.response.data, '삭제 실패');
       });
     }
   }

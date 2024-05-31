@@ -94,4 +94,22 @@ class BoardController extends Controller
         // 리턴
         return response()->json($responseData, 200);
     }
+
+    // 게시글 삭제
+    public function delete(Request $request) {
+        $boardId = $request->id;
+        Log::debug('보드아이디 : '. $boardId);
+        $selectBoard = Board::find($boardId);
+        
+        //
+        $responseData = [
+            'code' => '0'
+            ,'msg' => '게시글 삭제 완료'
+            ,'data' => $selectBoard
+            // ,'errorFlg' => false
+        ];
+
+        $selectBoard->delete();
+        return response()->json($responseData, 200);
+    }
 }

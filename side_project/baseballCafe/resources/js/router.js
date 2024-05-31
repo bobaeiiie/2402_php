@@ -19,15 +19,6 @@ const routes = [
             component: BoardComponent,
             beforeEnter: chkAuth,
         },
-        {
-            path: '/board/create',
-            component: BoardCreateComponent,
-            beforeEnter: chkAuth,
-        },
-        {
-            path: '/registration',
-            component: RegistrationComponent,
-        },
 ];
 
 function chkAuth(to, from, next) {

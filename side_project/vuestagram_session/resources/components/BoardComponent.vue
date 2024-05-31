@@ -11,7 +11,7 @@
         <!-- <button @click="detailFlg = false" class="btn btn-bg-black btn-close">닫기</button> -->
         <!-- 리소스 관리를 위해 빈객체로 바꿔주기 위해 새 함수 생성 -->
         <div>
-          <button @click="deleteDetail()" class="btn btn-close">삭제</button>
+          <button @click="$store.dispatch('delete', detailItem.id)"  class="btn btn-close">삭제</button>
           <button @click="closeDetail()" class="btn btn-close">닫기</button>
         </div>
       </div>
@@ -25,7 +25,6 @@
     </div>
   </div>
   <button v-if="$store.state.moreBoardFlg" @click="$store.dispatch('getMoreBoardData')" type="button" class="btn btn-bg-black btn-more">+</button>
-
 </template>
 <script setup>
 import { onBeforeMount, reactive, ref } from 'vue';
@@ -51,10 +50,6 @@ onBeforeMount(() => {
     store.dispatch('getBoardData');
   }
 })
-
-function deleteDetail() {
-  
-}
 
 
 

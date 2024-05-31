@@ -45,7 +45,7 @@ const store = createStore({
         setAddUserBoardsCount(state, data) {
             state.userInfo.boards_count++;
             localStorage.setItem('userInfo', state.userInfo);
-        }
+        },
     },
     actions: {
         /**
@@ -125,7 +125,6 @@ const store = createStore({
         setMoreBoardData(context) {
             const lastItem = context.state.boardData[context.state.boardData.length - 1];
             const url = '/api/board/' + lastItem.id;
-
             axios.get(url)
             .then(response => {
                 console.log(response.data); // TODO
@@ -187,6 +186,25 @@ const store = createStore({
                 alert(`게시글 작성 실패 (${error.response.data.code})`);
             })
         },
+
+        /**
+         * 게시글 삭제
+         * @param {*} context
+         */
+
+        delete(context, boardId) {
+            const url = '/api/board/' + boardId;
+
+            axios.delete(url)
+            .then(response => {
+                console.log(response.data, '삭제 완료');
+                // context.commit('closeModal');
+                router.replace('/board');
+            })
+            .catch(error => {
+                console.log(error.response.data, '삭제 실패');
+            })
+        }
 
     }
     

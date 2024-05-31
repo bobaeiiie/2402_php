@@ -27,3 +27,4 @@ Route::middleware('auth')->post('/api/logout', [UserController::class, 'logout']
 Route::middleware('auth')->get('/api/board', [BoardController::class, 'index']);
 Route::middleware('auth')->get('/api/board/{id}', [BoardController::class, 'moreIndex']);
 Route::middleware('auth')->post('/api/board', [BoardController::class, 'store']);
+Route::middleware('auth')->delete('/api/board/{id}', [BoardController::class, 'delete']);

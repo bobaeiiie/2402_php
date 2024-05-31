@@ -1,60 +1,78 @@
 <template>
-  <!-- 상세 -->
-  <div v-if="detailFlg" class="board-detail-box">
-    <div class="item">
-      <img :src="detailItem.img">
-      <hr>
-      <p>{{ detailItem.content }}</p>
-      <hr>
-      <div class="etc-box">
-        <span>작성자 : {{ detailItem.name }}</span>
-        <!-- <button @click="detailFlg = false" class="btn btn-bg-black btn-close">닫기</button> -->
-        <!-- 리소스 관리를 위해 빈객체로 바꿔주기 위해 새 함수 생성 -->
-        <div>
-          <button @click="deleteDetail()" class="btn btn-close">삭제</button>
-          <button @click="closeDetail()" class="btn btn-close">닫기</button>
+   <!-- 메인 -->
+    <main>
+      <div class="main-container">
+        <div class="side-container">
+          <div class="user-container">
+            <div class="user-profile">
+              <img src="">
+            </div>
+            <div class="user-etc">
+              <hr>
+              <div class="user-name">회원 이름</div> <hr>
+              <div class="user-rate">회원 등급</div> <hr>
+              <div class="user-write">작성한 게시글 수</div>
+            </div>
+          </div>
+          <div class="board-list-container">
+            <p>무슨 게시판</p> <hr>
+            <p>무슨 게시판</p> <hr>
+            <p>무슨 게시판</p> <hr>
+            <p>무슨 게시판</p> <hr>
+          </div>
+        </div>
+        <div class="board-container">
+          <div class="board-name"><h2>무슨 게시판</h2></div>
+          <hr>
+          <div class="board-info">
+            <p>글 번호</p>
+            <p>제목</p>
+            <p>작성자</p>
+            <p>작성일</p>
+            <p>조회수</p>
+          </div>
+          <hr>
+            <div class="boards">
+              <div class="boards-top"></div>
+              <div class="board-item">
+                <p>글 번호</p>
+                <p>제목</p>
+                <p>작성자</p>
+                <p>작성일</p>
+                <p>조회수</p>
+              </div>
+            </div>
         </div>
       </div>
-    </div>
-  </div>
+    </main>
 
-  <!-- 리스트 -->
-  <div class="board-list-box">
-    <div @click="openDetail(item)" v-for="(item, key) in $store.state.boardData" :key="key" class="item">
-            <img :src="item.img">
-    </div>
-  </div>
-  <button v-if="$store.state.moreBoardFlg" @click="$store.dispatch('getMoreBoardData')" type="button" class="btn btn-bg-black btn-more">+</button>
 
-</template>
+  
+  </template>
 <script setup>
-import { onBeforeMount, reactive, ref } from 'vue';
-import { useStore } from 'vuex';
+// import { onBeforeMount, reactive, ref } from 'vue';
+// import { useStore } from 'vuex';
 
-const store = useStore();
+// const store = useStore();
 
-let detailItem = reactive({});
-let detailFlg = ref(false); 
+// let detailItem = reactive({});
+// let detailFlg = ref(false); 
 
-function openDetail(data) {
-  detailItem = data;
-  detailFlg.value = true;
-}
+// function openDetail(data) {
+//   detailItem = data;
+//   detailFlg.value = true;
+// }
 
-function closeDetail() {
-  detailItem = {};
-  detailFlg.value = false;
-}
+// function closeDetail() {
+//   detailItem = {};
+//   detailFlg.value = false;
+// }
 
 onBeforeMount(() => {
   if(store.state.boardData.length < 1 ) {
     store.dispatch('getBoardData');
   }
 })
-
-function deleteDetail() {
-  
-}
 
 
 
